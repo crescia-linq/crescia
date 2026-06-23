@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LINQ家事代行・シッター向け登録者研修｜Crescia</title>
+  <meta name="description" content="LINQ登録者向け「家事代行・シッター向け実務研修」。契約・保険・訪問マナー・トラブル予防まで、活動前に知っておきたい基礎知識をZoomで学べます。安心して長く活動するための研修です。">
+  <meta name="keywords" content="家事代行,ベビーシッター,研修,LINQ,Crescia,契約書,保険,訪問マナー,トラブル予防,個人事業主">
+  <link rel="canonical" href="https://crescia-linq.github.io/crescia/training.html">
+
+  <!-- OGP -->
+  <meta property="og:url" content="https://crescia-linq.github.io/crescia/training.html">
+  <meta property="og:title" content="LINQ家事代行・シッター向け登録者研修｜Crescia">
+  <meta property="og:description" content="活動前に知っておきたい基礎知識。契約・保険・訪問マナー・トラブル予防まで、安心して活動するための実務研修です。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://crescia-linq.github.io/crescia/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LINQ家事代行・シッター向け登録者研修｜Crescia">
+  <meta name="twitter:description" content="活動前に知っておきたい基礎知識を学べる実務研修です。">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────
+       Custom Properties
+    ───────────────────────────── */
+    :root {
+      --ivory:         #FAF8F2;
+      --ivory-warm:    #FEF3E6;
+      --white:         #FFFFFF;
+      --orange:        #E08A3C;
+      --orange-light:  #F3C394;
+      --orange-pale:   #FDF0E2;
+      --orange-deep:   #C46F25;
+      --text-dark:     #2E2A26;
+      --text-mid:      #5C5650;
+      --text-light:    #948C82;
+      --border:        #ECE3D6;
+      --shadow:        rgba(180, 140, 80, 0.12);
+      --radius:        12px;
+      --radius-lg:     20px;
+    }
+
+    /* ─────────────────────────────
+       Reset & Base
+    ───────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--ivory);
+      color: var(--text-dark);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    h1, h2, h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─────────────────────────────
+       Layout Utilities
+    ───────────────────────────── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 72px 0; }
+
+    .section-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--orange-deep);
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(22px, 5.5vw, 30px);
+      line-height: 1.5;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-mid);
+      letter-spacing: 0.03em;
+      margin-bottom: 44px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--orange);
+      margin: 18px auto 0;
+    }
+
+    /* ─────────────────────────────
+       Scroll Animations
+    ───────────────────────────── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in-delay-1 { transition-delay: 0.08s; }
+    .fade-in-delay-2 { transition-delay: 0.16s; }
+    .fade-in-delay-3 { transition-delay: 0.24s; }
+    .fade-in-delay-4 { transition-delay: 0.32s; }
+    .fade-in-delay-5 { transition-delay: 0.40s; }
+
+    /* ─────────────────────────────
+       Header
+    ───────────────────────────── */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250, 248, 242, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      letter-spacing: 0.15em;
+      color: var(--text-dark);
+    }
+    .header-logo span {
+      font-size: 10px;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-light);
+      display: block;
+      letter-spacing: 0.06em;
+    }
+    .header-cta {
+      background: var(--orange);
+      color: var(--white);
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      padding: 9px 18px;
+      border-radius: 40px;
+      transition: background 0.25s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .header-cta:hover { background: var(--orange-deep); transform: translateY(-1px); }
+
+    /* ─────────────────────────────
+       Hero
+    ───────────────────────────── */
+    .hero {
+      padding: 132px 0 88px;
+      text-align: center;
+      background: linear-gradient(160deg, #FFFCF7 0%, var(--ivory-warm) 60%, #FDF1E4 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,138,60,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(224,138,60,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--orange);
+      color: var(--orange-deep);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      padding: 5px 18px;
+      border-radius: 40px;
+      margin-bottom: 26px;
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 6.4vw, 40px);
+      line-height: 1.45;
+      letter-spacing: 0.03em;
+      margin-bottom: 20px;
+      color: var(--text-dark);
+    }
+
+    .hero-catch {
+      font-size: clamp(15px, 3.6vw, 18px);
+      color: var(--text-mid);
+      margin-bottom: 40px;
+      letter-spacing: 0.03em;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--orange);
+      color: var(--white);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      letter-spacing: 0.06em;
+      padding: 18px 40px;
+      border-radius: 60px;
+      box-shadow: 0 8px 26px rgba(224, 138, 60, 0.32);
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+      width: 100%;
+      max-width: 340px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: var(--orange-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 34px rgba(224, 138, 60, 0.40);
+    }
+    .btn-primary::after { content: '→'; font-family: sans-serif; }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--orange-deep);
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      padding: 14px 36px;
+      border-radius: 60px;
+      border: 1.5px solid var(--orange-light);
+      transition: background 0.25s, border-color 0.25s, transform 0.2s;
+      width: 100%;
+      max-width: 340px;
+    }
+    .btn-secondary:hover {
+      background: var(--orange-pale);
+      border-color: var(--orange);
+      transform: translateY(-1px);
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    /* ─────────────────────────────
+       Worry Section
+    ───────────────────────────── */
+    .worry { background: var(--white); text-align: center; }
+
+    .worry-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      text-align: left;
+    }
+    .worry-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--ivory);
+      border-left: 3px solid var(--orange-light);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 15px 18px;
+      font-size: 14px;
+      color: var(--text-mid);
+      letter-spacing: 0.02em;
+      line-height: 1.7;
+    }
+    .worry-icon { color: var(--orange); font-size: 15px; margin-top: 2px; flex-shrink: 0; }
+
+    .worry-resolve {
+      margin-top: 40px;
+      background: linear-gradient(135deg, var(--orange-pale), #FBF8F0);
+      border-radius: var(--radius-lg);
+      padding: 30px 22px;
+      text-align: center;
+    }
+    .worry-resolve p {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(16px, 4vw, 19px);
+      line-height: 1.7;
+      color: var(--text-dark);
+    }
+    .worry-resolve strong { color: var(--orange-deep); }
+
+    /* ─────────────────────────────
+       Curriculum
+    ───────────────────────────── */
+    .curriculum { background: var(--ivory); text-align: center; }
+
+    .curriculum-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .curriculum-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 30px 24px;
+      text-align: left;
+      box-shadow: 0 4px 18px var(--shadow);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .curriculum-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--orange);
+    }
+
+    .card-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--orange-light);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+      letter-spacing: 0.03em;
+    }
+
+    .card-items {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-items li {
+      background: var(--ivory);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      font-size: 12.5px;
+      color: var(--text-mid);
+      padding: 5px 13px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ─────────────────────────────
+       Outcomes
+    ───────────────────────────── */
+    .outcomes { background: var(--white); text-align: center; }
+
+    .outcomes-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .outcome-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      background: var(--ivory);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    .outcome-check {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: var(--orange);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .outcome-text {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14.5px;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+    }
+
+    /* ─────────────────────────────
+       Message
+    ───────────────────────────── */
+    .message {
+      background: linear-gradient(160deg, var(--text-dark) 0%, #4a3a28 100%);
+      text-align: center;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .message::before {
+      content: 'Crescia';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 110px;
+      font-weight: 300;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(255,255,255,0.03);
+      white-space: nowrap;
+      pointer-events: none;
+      letter-spacing: 0.1em;
+    }
+    .message .section-label { color: var(--orange-light); }
+    .message-quote {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(18px, 4.6vw, 23px);
+      line-height: 1.8;
+      margin-bottom: 28px;
+      letter-spacing: 0.04em;
+      position: relative;
+    }
+    .message-body {
+      font-size: 14px;
+      color: rgba(255,255,255,0.78);
+      line-height: 2;
+      letter-spacing: 0.03em;
+      position: relative;
+    }
+
+    /* ─────────────────────────────
+       Overview
+    ───────────────────────────── */
+    .overview { background: var(--ivory); text-align: center; }
+
+    .overview-table {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 18px var(--shadow);
+      overflow: hidden;
+      text-align: left;
+    }
+    .overview-row {
+      display: flex;
+      flex-direction: column;
+      padding: 20px 26px;
+      border-bottom: 1px solid var(--border);
+      gap: 4px;
+    }
+    .overview-row:last-child { border-bottom: none; }
+    .overview-label {
+      font-size: 12px;
+      color: var(--orange-deep);
+      letter-spacing: 0.08em;
+    }
+    .overview-value {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 16px;
+      color: var(--text-dark);
+      letter-spacing: 0.03em;
+    }
+    .overview-value.price {
+      font-size: 22px;
+      color: var(--orange-deep);
+    }
+    .overview-value.price small {
+      font-size: 13px;
+      color: var(--text-light);
+      font-family: 'Noto Sans JP', sans-serif;
+      margin-left: 6px;
+    }
+
+    /* ─────────────────────────────
+       Final CTA
+    ───────────────────────────── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--orange-pale) 0%, #FBF6EC 100%);
+      text-align: center;
+      padding: 88px 0;
+    }
+    .final-cta .section-label { color: var(--orange-deep); }
+    .final-cta-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(20px, 5vw, 26px);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      letter-spacing: 0.04em;
+      color: var(--text-dark);
+    }
+
+    /* ─────────────────────────────
+       Footer
+    ───────────────────────────── */
+    .site-footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 40px 24px;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      letter-spacing: 0.2em;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .footer-tagline {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      margin-bottom: 22px;
+      color: rgba(255,255,255,0.4);
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--orange-light); }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+    /* ─────────────────────────────
+       Fixed Bottom CTA
+    ───────────────────────────── */
+    .fixed-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(250, 248, 242, 0.97);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--border);
+      padding: 12px 20px 16px;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+    .fixed-cta.visible { transform: translateY(0); }
+    .fixed-cta .btn-primary { font-size: 13px; padding: 13px 0; max-width: none; width: 100%; }
+
+    /* ─────────────────────────────
+       Responsive
+    ───────────────────────────── */
+    @media (min-width: 600px) {
+      .btn-primary, .btn-secondary { width: auto; max-width: none; }
+    }
+    @media (min-width: 768px) {
+      section { padding: 100px 0; }
+      .fixed-cta {
+        max-width: 500px;
+        left: 50%; right: auto;
+        transform: translateX(-50%) translateY(100%);
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+        border-left: 1px solid var(--border);
+        border-right: 1px solid var(--border);
+      }
+      .fixed-cta.visible { transform: translateX(-50%) translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ───── Header ───── -->
+  <header class="site-header" role="banner">
+    <div class="header-logo">
+      Crescia
+      <span>LINQ登録者向け研修</span>
+    </div>
+    <a href="https://forms.gle/sysRVqaLvYXYkPrS7" class="header-cta" target="_blank" rel="noopener">研修に申し込む</a>
+  </header>
+
+  <!-- ───── Hero ───── -->
+  <section class="hero" id="top" aria-label="メインビジュアル">
+    <div class="container">
+      <div class="hero-badge fade-in">LINQ登録者向け</div>
+
+      <h1 class="hero-title fade-in fade-in-delay-1">
+        LINQ家事代行・シッター<br>向け登録者研修
+      </h1>
+
+      <p class="hero-catch fade-in fade-in-delay-2">
+        活動前に知っておきたい基礎知識
+      </p>
+
+      <div class="hero-cta-group fade-in fade-in-delay-3">
+        <a href="https://forms.gle/sysRVqaLvYXYkPrS7" class="btn-primary" target="_blank" rel="noopener">研修に申し込む</a>
+        <a href="#curriculum" class="btn-secondary">研修内容を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Worry ───── -->
+  <section class="worry" id="worry" aria-label="こんなお悩みありませんか？">
+    <div class="container">
+      <span class="section-label fade-in">Your Worries</span>
+      <h2 class="section-title fade-in">こんなお悩み<br>ありませんか？</h2>
+      <div class="divider fade-in"></div>
+      <p class="section-sub fade-in">家事代行・シッターとして活動する中で、こんな不安はありませんか。</p>
+
+      <ul class="worry-list">
+        <li class="worry-item fade-in">
+          <span class="worry-icon" aria-hidden="true">●</span>
+          契約書は必要なの？
+        </li>
+        <li class="worry-item fade-in fade-in-delay-1">
+          <span class="worry-icon" aria-hidden="true">●</span>
+          保険の考え方は？
+        </li>
+        <li class="worry-item fade-in fade-in-delay-2">
+          <span class="worry-icon" aria-hidden="true">●</span>
+          お客様とのトラブルが心配
+        </li>
+        <li class="worry-item fade-in fade-in-delay-3">
+          <span class="worry-icon" aria-hidden="true">●</span>
+          訪問時のマナーに自信がない
+        </li>
+        <li class="worry-item fade-in fade-in-delay-4">
+          <span class="worry-icon" aria-hidden="true">●</span>
+          個人情報の扱いが不安
+        </li>
+        <li class="worry-item fade-in fade-in-delay-5">
+          <span class="worry-icon" aria-hidden="true">●</span>
+          キャンセル対応に困ったことがある
+        </li>
+      </ul>
+
+      <div class="worry-resolve fade-in">
+        <p>
+          そのお悩み、<strong>この研修で解消できます。</strong><br>
+          安心して活動するための基礎知識をお伝えします。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Curriculum ───── -->
+  <section class="curriculum" id="curriculum" aria-label="研修内容">
+    <div class="container">
+      <span class="section-label fade-in">Curriculum</span>
+      <h2 class="section-title fade-in">研修内容</h2>
+      <div class="divider fade-in"></div>
+      <p class="section-sub fade-in">活動前に押さえておきたい内容を、3部構成でお伝えします。</p>
+
+      <div class="curriculum-grid">
+
+        <article class="curriculum-card fade-in">
+          <div class="card-number">01</div>
+          <h3 class="card-title">活動前に知っておきたい基礎知識</h3>
+          <ul class="card-items" aria-label="含まれる内容">
+            <li>個人事業主の基礎</li>
+            <li>利用規約と契約書</li>
+            <li>保険加入の必要性</li>
+            <li>個人情報保護</li>
+          </ul>
+        </article>
+
+        <article class="curriculum-card fade-in fade-in-delay-1">
+          <div class="card-number">02</div>
+          <h3 class="card-title">訪問マナーと接客</h3>
+          <ul class="card-items" aria-label="含まれる内容">
+            <li>訪問前の連絡</li>
+            <li>到着時のマナー</li>
+            <li>身だしなみ</li>
+            <li>言葉遣い</li>
+            <li>お客様宅での振る舞い</li>
+            <li>家庭ごとの価値観の違いへの対応</li>
+            <li>プライバシーへの配慮</li>
+            <li>報告・連絡・相談</li>
+          </ul>
+        </article>
+
+        <article class="curriculum-card fade-in fade-in-delay-2">
+          <div class="card-number">03</div>
+          <h3 class="card-title">トラブル予防</h3>
+          <ul class="card-items" aria-label="含まれる内容">
+            <li>初期対応</li>
+            <li>キャンセル対応</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Outcomes ───── -->
+  <section class="outcomes" id="outcomes" aria-label="この研修で得られること">
+    <div class="container">
+      <span class="section-label fade-in">What You Gain</span>
+      <h2 class="section-title fade-in">この研修で<br>得られること</h2>
+      <div class="divider fade-in"></div>
+      <p class="section-sub fade-in">活動への不安を、確かな知識と自信に変えます。</p>
+
+      <ul class="outcomes-list">
+        <li class="outcome-item fade-in">
+          <div class="outcome-check" aria-hidden="true">✓</div>
+          <span class="outcome-text">安心して活動するための基礎知識が身につく</span>
+        </li>
+        <li class="outcome-item fade-in fade-in-delay-1">
+          <div class="outcome-check" aria-hidden="true">✓</div>
+          <span class="outcome-text">お客様から信頼される対応が学べる</span>
+        </li>
+        <li class="outcome-item fade-in fade-in-delay-2">
+          <div class="outcome-check" aria-hidden="true">✓</div>
+          <span class="outcome-text">トラブルを未然に防ぐ考え方が身につく</span>
+        </li>
+        <li class="outcome-item fade-in fade-in-delay-3">
+          <div class="outcome-check" aria-hidden="true">✓</div>
+          <span class="outcome-text">自信を持って活動できるようになる</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ───── Message ───── -->
+  <section class="message" aria-label="主催者メッセージ">
+    <div class="container">
+      <span class="section-label fade-in">Message</span>
+
+      <blockquote class="message-quote fade-in">
+        家事代行やシッターのお仕事は、<br>技術だけではなく信頼が大切です。
+      </blockquote>
+
+      <p class="message-body fade-in">
+        この研修では、<br>
+        活動前に知っておきたい知識や<br>
+        トラブル予防の考え方、<br>
+        お客様との信頼関係づくりについてお伝えします。<br><br>
+        安心して長く活動していくための学びの場として、<br>
+        ぜひご参加ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ───── Overview ───── -->
+  <section class="overview" id="overview" aria-label="開催概要">
+    <div class="container">
+      <span class="section-label fade-in">Overview</span>
+      <h2 class="section-title fade-in">開催概要</h2>
+      <div class="divider fade-in"></div>
+      <p class="section-sub fade-in">お申し込み後、開催日時をご相談のうえ決定します。</p>
+
+      <div class="overview-table fade-in">
+        <div class="overview-row">
+          <span class="overview-label">開催日</span>
+          <span class="overview-value">相談にて決定</span>
+        </div>
+        <div class="overview-row">
+          <span class="overview-label">開催方法</span>
+          <span class="overview-value">Zoom</span>
+        </div>
+        <div class="overview-row">
+          <span class="overview-label">参加費</span>
+          <span class="overview-value price">33,000円<small>（税込）</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Final CTA ───── -->
+  <section class="final-cta" id="apply" aria-label="申込">
+    <div class="container">
+      <span class="section-label fade-in">Apply Now</span>
+      <p class="final-cta-title fade-in">
+        安心して活動を続けるための<br>第一歩を、ここから。
+      </p>
+      <div class="hero-cta-group fade-in">
+        <a href="https://forms.gle/sysRVqaLvYXYkPrS7" class="btn-primary" target="_blank" rel="noopener">研修に申し込む</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───── Footer ───── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-logo">Crescia</div>
+    <p class="footer-tagline">LINQ家事代行・シッター向け登録者研修</p>
+    <nav class="footer-links" aria-label="フッターナビゲーション">
+      <a href="index.html">トップ</a>
+      <a href="privacy.html">プライバシーポリシー</a>
+      <a href="tokushoho.html">特定商取引法</a>
+    </nav>
+    <p class="footer-copy">© 2026 Crescia. All rights reserved.</p>
+  </footer>
+
+  <!-- ───── Fixed Bottom CTA ───── -->
+  <div class="fixed-cta" id="fixedCta" role="region" aria-label="固定CTAバー">
+    <a href="https://forms.gle/sysRVqaLvYXYkPrS7" class="btn-primary" target="_blank" rel="noopener">研修に申し込む</a>
+  </div>
+
+  <!-- ───── JavaScript ───── -->
+  <script>
+    // ── Scroll Animations (IntersectionObserver) ──
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    fadeEls.forEach((el) => observer.observe(el));
+
+    // ── Fixed CTA (show after scrolling past hero) ──
+    const fixedCta = document.getElementById('fixedCta');
+    const heroEl   = document.querySelector('.hero');
+
+    const ctaObserver = new IntersectionObserver(
+      ([entry]) => {
+        fixedCta.classList.toggle('visible', !entry.isIntersecting);
+      },
+      { threshold: 0 }
+    );
+    ctaObserver.observe(heroEl);
+  </script>
+
+</body>
+</html>
