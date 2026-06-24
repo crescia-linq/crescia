@@ -31,22 +31,27 @@
       --kc-success: #6FA888;
       max-width: 640px;
       margin: 0 auto;
-      padding: 32px 20px;
+      padding: 36px 20px;
       font-family: 'Noto Sans JP', sans-serif;
       color: var(--kc-text);
+      background: linear-gradient(160deg, #FFFBF6 0%, #FFEFE0 55%, #FFF6EC 100%);
+      border-radius: 28px;
     }
     #kuchikomi-widget * { box-sizing: border-box; }
     #kuchikomi-widget h2 {
-      font-size: 20px;
+      font-size: 21px;
+      font-weight: 600;
+      letter-spacing: .02em;
       margin: 0 0 18px;
       color: var(--kc-orange-deeper);
     }
     #kuchikomi-widget .kc-card {
-      background: var(--kc-cream);
+      background: linear-gradient(160deg, #FFFDF9 0%, var(--kc-cream) 100%);
       border: 1px solid var(--kc-border);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 28px;
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 18px 40px -14px rgba(217, 112, 47, 0.28), 0 4px 10px rgba(217, 112, 47, 0.08);
     }
     #kuchikomi-widget .kc-field { margin-bottom: 16px; }
     #kuchikomi-widget .kc-field label {
@@ -70,19 +75,31 @@
     #kuchikomi-widget .kc-field textarea:focus {
       outline: none;
       border-color: var(--kc-orange-deep);
+      box-shadow: 0 0 0 3px rgba(232, 133, 74, 0.15);
     }
     #kuchikomi-widget .kc-field textarea { min-height: 100px; resize: vertical; }
     #kuchikomi-widget .kc-submit {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 12px 28px;
+      padding: 14px 34px;
       border-radius: 999px;
-      font-size: 14px;
+      font-size: 14.5px;
+      font-weight: 600;
+      letter-spacing: .03em;
       border: none;
       cursor: pointer;
       color: #fff;
-      background: linear-gradient(135deg, var(--kc-orange), var(--kc-orange-deep));
+      background: linear-gradient(135deg, var(--kc-orange) 0%, var(--kc-orange-deep) 55%, var(--kc-orange-deeper) 100%);
+      box-shadow: 0 10px 24px -6px rgba(217, 112, 47, 0.55);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    #kuchikomi-widget .kc-submit:hover:not(:disabled) {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 30px -6px rgba(217, 112, 47, 0.6);
+    }
+    #kuchikomi-widget .kc-submit:active:not(:disabled) {
+      transform: translateY(-1px) scale(1);
     }
     #kuchikomi-widget .kc-submit:disabled { opacity: .5; cursor: not-allowed; }
     #kuchikomi-widget .kc-msg {
@@ -99,18 +116,24 @@
     #kuchikomi-widget .kc-review {
       background: #fff;
       border: 1px solid var(--kc-border);
-      border-radius: 14px;
-      padding: 18px 20px;
+      border-radius: 16px;
+      padding: 20px 22px;
+      box-shadow: 0 8px 22px -10px rgba(217, 112, 47, 0.18);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    #kuchikomi-widget .kc-review:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px -10px rgba(217, 112, 47, 0.26);
     }
     #kuchikomi-widget .kc-review .kc-date-badge {
       display: inline-block;
-      background: var(--kc-orange-light);
+      background: linear-gradient(135deg, var(--kc-orange-light), #FFE3C2);
       color: var(--kc-orange-deeper);
       font-size: 12px;
-      font-weight: 500;
-      padding: 4px 12px;
+      font-weight: 600;
+      padding: 5px 14px;
       border-radius: 999px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
     #kuchikomi-widget .kc-review .kc-comment {
       font-size: 14px;
@@ -127,7 +150,7 @@
   </style>
 
   <div class="kc-card">
-    <h2>ご感想</h2>
+    <h2>ご感想 💌</h2>
     <div class="kc-msg" id="kcFormMsg"></div>
     <form id="kcReviewForm">
       <div class="kc-field">
@@ -142,7 +165,7 @@
     </form>
   </div>
 
-  <h2>お客様の声</h2>
+  <h2>お客様の声 ✨</h2>
   <div class="kc-list" id="kcReviewList">
     <p class="kc-empty">まだ投稿がありません。最初のご感想を投稿してみませんか？</p>
   </div>
