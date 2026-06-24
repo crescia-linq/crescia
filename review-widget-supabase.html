@@ -134,8 +134,27 @@
     #kuchikomi-widget .kc-msg.show { display: block; }
     #kuchikomi-widget .kc-msg.success { background: #EFF6F1; color: var(--kc-success); border: 1px solid #CFE6D9; }
     #kuchikomi-widget .kc-msg.error { background: #FBEDEA; color: var(--kc-danger); border: 1px solid #F1CFC8; }
-    #kuchikomi-widget .kc-list { display: flex; flex-direction: column; gap: 14px; }
+    #kuchikomi-widget .kc-list {
+      display: flex;
+      flex-direction: row;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 4px 4px 14px;
+      margin: 0 -4px;
+      scrollbar-width: thin;
+      scrollbar-color: var(--kc-orange-light) transparent;
+    }
+    #kuchikomi-widget .kc-list::-webkit-scrollbar { height: 6px; }
+    #kuchikomi-widget .kc-list::-webkit-scrollbar-thumb {
+      background: var(--kc-orange-light);
+      border-radius: 999px;
+    }
     #kuchikomi-widget .kc-review {
+      flex: 0 0 auto;
+      width: min(78%, 280px);
+      scroll-snap-align: start;
       background: #fff;
       border: 1px solid var(--kc-border);
       border-radius: 16px;
@@ -161,6 +180,8 @@
       color: var(--kc-text-light);
     }
     #kuchikomi-widget .kc-empty {
+      width: 100%;
+      flex: 1 0 100%;
       text-align: center;
       color: var(--kc-text-light);
       font-size: 13px;
