@@ -1,18 +1,28 @@
 <!--
-  口コミウィジェット（フロントエンドのみのダミー版・動作確認用）
+  口コミウィジェット（貼り付け用パーツ）
   ------------------------------------------------------------
-  Supabase接続なしで、投稿したらその場で下の一覧に追加されるだけの
-  デモ版です。ページを再読み込みすると投稿内容は消えます（保存されません）。
+  このファイルは単体でも開けるよう <head> 付きの完全なHTMLにしています。
 
-  本番でSupabaseに保存・共有したい場合は review-widget.html を
-  使ってください（SETUP.md参照）。
+  既存サイトに貼り付ける場合：
+    <!DOCTYPE html> 〜 <body> の行と、</body></html> の行は不要です。
+    その間の <section id="kuchikomi-widget"> 〜 </script> の部分だけを
+    既存のHTMLファイルの <body> 内、口コミを表示したい場所にコピー＆ペーストしてください
+    （既存ページの <head> に <meta charset="UTF-8"> がすでにあれば文字化けしません）。
+
+  使う前に必ず以下の2箇所を書き換えてください（このファイル内に印あり）。
+    1. SUPABASE_URL
+    2. SUPABASE_ANON_KEY
+
+  Supabase側の準備（テーブル作成）は supabase-schema.sql を
+  SupabaseのSQL Editorで実行してください。
+  詳しい手順は SETUP.md を参照してください。
 -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>口コミウィジェット プレビュー（ダミー版）</title>
+<title>口コミウィジェット プレビュー</title>
 </head>
 <body>
 <section id="kuchikomi-widget">
@@ -163,13 +173,16 @@
 
   <h2>口コミ一覧</h2>
   <div class="kc-list" id="kcReviewList">
-    <p class="kc-empty">まだ口コミがありません。最初の口コミを投稿してみませんか？</p>
+    <p class="kc-empty">読み込み中です…</p>
   </div>
 </section>
 
 <script>
 (function () {
-  var reviews = []; // ダミーのその場限りのデータ（保存されません）
+  // ▼▼▼ 1. ここを書き換えてください ▼▼▼
+  var SUPABASE_URL = "https://YOUR-PROJECT-REF.supabase.co";
+  var SUPABASE_ANON_KEY = "YOUR-ANON-PUBLIC-KEY";
+  // ▲▲▲ ここまで ▲▲▲
 
   function escapeHtml(str) {
     var div = document.createElement("div");
@@ -180,8 +193,9 @@
     var r = Math.max(1, Math.min(5, Math.round(rating)));
     return "★".repeat(r) + "☆".repeat(5 - r);
   }
-  function formatDate(date) {
-    return date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日";
+  function formatDate(isoString) {
+    var d = new Date(isoString);
+    return d.getFullYear() + "年" + (d.getMonth() + 1) + "月" + d.getDate() + "日";
   }
   function showMsg(type, text) {
     var el = document.getElementById("kcFormMsg");
@@ -189,55 +203,96 @@
     el.textContent = text;
   }
 
-  function renderList() {
-    var listEl = document.getElementById("kcReviewList");
-    if (reviews.length === 0) {
-      listEl.innerHTML = '<p class="kc-empty">まだ口コミがありません。最初の口コミを投稿してみませんか？</p>';
-      return;
-    }
-    listEl.innerHTML = reviews.map(function (r) {
-      return (
-        '<div class="kc-review">' +
-        '<div class="kc-stars">' + renderStars(r.rating) + '</div>' +
-        '<p class="kc-comment">' + escapeHtml(r.comment) + '</p>' +
-        '<div class="kc-meta">' +
-        '<span>' + escapeHtml(r.nickname) + '様</span>' +
-        '<span>' + formatDate(r.createdAt) + '</span>' +
-        '</div></div>'
-      );
-    }).join("");
-  }
+  function init(supabaseLib) {
+    var supabase = supabaseLib.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-  var starInput = document.getElementById("kcStarInput");
-  var ratingField = document.getElementById("kcRating");
-  starInput.querySelectorAll("button").forEach(function (btn) {
-    btn.addEventListener("click", function () {
-      var value = Number(btn.dataset.value);
-      ratingField.value = value;
-      starInput.querySelectorAll("button").forEach(function (b) {
-        b.classList.toggle("active", Number(b.dataset.value) <= value);
+    function loadReviews() {
+      var listEl = document.getElementById("kcReviewList");
+      supabase
+        .from("reviews")
+        .select("nickname, rating, comment, created_at")
+        .order("created_at", { ascending: false })
+        .then(function (res) {
+          if (res.error) throw res.error;
+          var data = res.data || [];
+          if (data.length === 0) {
+            listEl.innerHTML = '<p class="kc-empty">まだ口コミがありません。最初の口コミを投稿してみませんか？</p>';
+            return;
+          }
+          listEl.innerHTML = data.map(function (r) {
+            return (
+              '<div class="kc-review">' +
+              '<div class="kc-stars">' + renderStars(r.rating) + '</div>' +
+              '<p class="kc-comment">' + escapeHtml(r.comment) + '</p>' +
+              '<div class="kc-meta">' +
+              '<span>' + escapeHtml(r.nickname) + '様</span>' +
+              '<span>' + formatDate(r.created_at) + '</span>' +
+              '</div></div>'
+            );
+          }).join("");
+        })
+        .catch(function () {
+          listEl.innerHTML = '<p class="kc-empty">口コミの読み込みに失敗しました。</p>';
+        });
+    }
+
+    var starInput = document.getElementById("kcStarInput");
+    var ratingField = document.getElementById("kcRating");
+    starInput.querySelectorAll("button").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var value = Number(btn.dataset.value);
+        ratingField.value = value;
+        starInput.querySelectorAll("button").forEach(function (b) {
+          b.classList.toggle("active", Number(b.dataset.value) <= value);
+        });
       });
     });
-  });
 
-  document.getElementById("kcReviewForm").addEventListener("submit", function (e) {
-    e.preventDefault();
-    var nickname = document.getElementById("kcNickname").value.trim();
-    var rating = Number(ratingField.value);
-    var comment = document.getElementById("kcComment").value.trim();
+    document.getElementById("kcReviewForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var submitBtn = document.getElementById("kcSubmitBtn");
+      var nickname = document.getElementById("kcNickname").value.trim();
+      var rating = Number(ratingField.value);
+      var comment = document.getElementById("kcComment").value.trim();
 
-    if (!nickname || !rating || !comment) {
-      showMsg("error", "すべての項目を入力してください。");
-      return;
-    }
+      if (!nickname || !rating || !comment) {
+        showMsg("error", "すべての項目を入力してください。");
+        return;
+      }
 
-    reviews.unshift({ nickname: nickname, rating: rating, comment: comment, createdAt: new Date() });
-    renderList();
+      submitBtn.disabled = true;
+      submitBtn.textContent = "送信中…";
 
-    showMsg("success", "口コミを投稿しました（ダミー表示のため保存はされません）。");
-    document.getElementById("kcReviewForm").reset();
-    starInput.querySelectorAll("button").forEach(function (b) { b.classList.remove("active"); });
-  });
+      supabase
+        .from("reviews")
+        .insert({ nickname: nickname, rating: rating, comment: comment })
+        .then(function (res) {
+          if (res.error) throw res.error;
+          showMsg("success", "口コミを投稿しました。ありがとうございます。");
+          document.getElementById("kcReviewForm").reset();
+          starInput.querySelectorAll("button").forEach(function (b) { b.classList.remove("active"); });
+          loadReviews();
+        })
+        .catch(function () {
+          showMsg("error", "投稿に失敗しました。時間をおいて再度お試しください。");
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "投稿する";
+        });
+    });
+
+    loadReviews();
+  }
+
+  if (window.supabase) {
+    init(window.supabase);
+  } else {
+    var script = document.createElement("script");
+    script.src = "https://unpkg.com/@supabase/supabase-js@2/dist/umd/supabase.js";
+    script.onload = function () { init(window.supabase); };
+    document.head.appendChild(script);
+  }
 })();
 </script>
 </body>

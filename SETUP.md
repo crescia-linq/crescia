@@ -13,7 +13,8 @@
 
 ## 2. ウィジェットを既存ページに貼り付け
 
-1. `review-widget.html` の中身を全部コピーする。
+1. `review-widget-supabase.html`（Supabase接続版）の中身を全部コピーする。
+   ※ `review-widget.html` はSupabase接続なしのダミー版（動作確認用）です。
 2. 口コミを表示したい既存HTMLファイルの `<body>` 内、表示したい場所に貼り付ける。
 3. 貼り付けたコードの中の以下2箇所を、手順1でメモした値に書き換える。
 
