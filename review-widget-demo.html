@@ -1,0 +1,248 @@
+<!--
+  口コミウィジェット（フロントエンドのみのダミー版・動作確認用）
+  ------------------------------------------------------------
+  Supabase接続なしで、投稿したらその場で下の一覧に追加されるだけの
+  デモ版です。ページを再読み込みすると投稿内容は消えます（保存されません）。
+
+  本番でSupabaseに保存・共有したい場合は review-widget.html を
+  使ってください（SETUP.md参照）。
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>口コミウィジェット プレビュー（ダミー版）</title>
+</head>
+<body>
+<section id="kuchikomi-widget">
+  <style>
+    #kuchikomi-widget {
+      --kc-orange: #F4A35C;
+      --kc-orange-deep: #E8854A;
+      --kc-orange-deeper: #D9702F;
+      --kc-orange-light: #FBE3C8;
+      --kc-cream: #FFF9F2;
+      --kc-text: #4A3526;
+      --kc-text-mid: #7A6354;
+      --kc-text-light: #A8927F;
+      --kc-border: #F0DDC4;
+      --kc-star: #F2A93C;
+      --kc-danger: #C9695A;
+      --kc-success: #6FA888;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 32px 20px;
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--kc-text);
+    }
+    #kuchikomi-widget * { box-sizing: border-box; }
+    #kuchikomi-widget h2 {
+      font-size: 20px;
+      margin: 0 0 18px;
+      color: var(--kc-orange-deeper);
+    }
+    #kuchikomi-widget .kc-card {
+      background: var(--kc-cream);
+      border: 1px solid var(--kc-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+    #kuchikomi-widget .kc-field { margin-bottom: 16px; }
+    #kuchikomi-widget .kc-field label {
+      display: block;
+      font-size: 13px;
+      color: var(--kc-text-mid);
+      margin-bottom: 6px;
+    }
+    #kuchikomi-widget .kc-field input,
+    #kuchikomi-widget .kc-field textarea {
+      width: 100%;
+      padding: 11px 13px;
+      border: 1.5px solid var(--kc-border);
+      border-radius: 10px;
+      font-size: 14px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--kc-text);
+    }
+    #kuchikomi-widget .kc-field input:focus,
+    #kuchikomi-widget .kc-field textarea:focus {
+      outline: none;
+      border-color: var(--kc-orange-deep);
+    }
+    #kuchikomi-widget .kc-field textarea { min-height: 100px; resize: vertical; }
+    #kuchikomi-widget .kc-star-input { display: flex; gap: 6px; font-size: 26px; }
+    #kuchikomi-widget .kc-star-input button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--kc-border);
+      padding: 0;
+      line-height: 1;
+    }
+    #kuchikomi-widget .kc-star-input button.active { color: var(--kc-star); }
+    #kuchikomi-widget .kc-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, var(--kc-orange), var(--kc-orange-deep));
+    }
+    #kuchikomi-widget .kc-submit:disabled { opacity: .5; cursor: not-allowed; }
+    #kuchikomi-widget .kc-msg {
+      display: none;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    #kuchikomi-widget .kc-msg.show { display: block; }
+    #kuchikomi-widget .kc-msg.success { background: #EFF6F1; color: var(--kc-success); border: 1px solid #CFE6D9; }
+    #kuchikomi-widget .kc-msg.error { background: #FBEDEA; color: var(--kc-danger); border: 1px solid #F1CFC8; }
+    #kuchikomi-widget .kc-list { display: flex; flex-direction: column; gap: 14px; }
+    #kuchikomi-widget .kc-review {
+      background: #fff;
+      border: 1px solid var(--kc-border);
+      border-radius: 14px;
+      padding: 18px 20px;
+    }
+    #kuchikomi-widget .kc-review .kc-stars { color: var(--kc-star); font-size: 15px; letter-spacing: 2px; }
+    #kuchikomi-widget .kc-review .kc-comment {
+      font-size: 14px;
+      color: var(--kc-text-mid);
+      white-space: pre-wrap;
+      margin: 8px 0;
+    }
+    #kuchikomi-widget .kc-review .kc-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--kc-text-light);
+    }
+    #kuchikomi-widget .kc-empty {
+      text-align: center;
+      color: var(--kc-text-light);
+      font-size: 13px;
+      padding: 20px 0;
+    }
+  </style>
+
+  <p class="kc-msg show" style="background:#FBE3C8;color:#D9702F;border:1px solid #F0DDC4;">
+    ※これはダミー版です。投稿内容は保存されず、再読み込みすると消えます。
+  </p>
+
+  <div class="kc-card">
+    <h2>口コミを投稿する</h2>
+    <div class="kc-msg" id="kcFormMsg"></div>
+    <form id="kcReviewForm">
+      <div class="kc-field">
+        <label for="kcNickname">ニックネーム</label>
+        <input type="text" id="kcNickname" maxlength="30" required>
+      </div>
+      <div class="kc-field">
+        <label>評価</label>
+        <div class="kc-star-input" id="kcStarInput">
+          <button type="button" data-value="1">★</button>
+          <button type="button" data-value="2">★</button>
+          <button type="button" data-value="3">★</button>
+          <button type="button" data-value="4">★</button>
+          <button type="button" data-value="5">★</button>
+        </div>
+        <input type="hidden" id="kcRating">
+      </div>
+      <div class="kc-field">
+        <label for="kcComment">コメント</label>
+        <textarea id="kcComment" maxlength="1000" required></textarea>
+      </div>
+      <button type="submit" class="kc-submit" id="kcSubmitBtn">投稿する</button>
+    </form>
+  </div>
+
+  <h2>口コミ一覧</h2>
+  <div class="kc-list" id="kcReviewList">
+    <p class="kc-empty">まだ口コミがありません。最初の口コミを投稿してみませんか？</p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var reviews = []; // ダミーのその場限りのデータ（保存されません）
+
+  function escapeHtml(str) {
+    var div = document.createElement("div");
+    div.textContent = str || "";
+    return div.innerHTML;
+  }
+  function renderStars(rating) {
+    var r = Math.max(1, Math.min(5, Math.round(rating)));
+    return "★".repeat(r) + "☆".repeat(5 - r);
+  }
+  function formatDate(date) {
+    return date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日";
+  }
+  function showMsg(type, text) {
+    var el = document.getElementById("kcFormMsg");
+    el.className = "kc-msg show " + type;
+    el.textContent = text;
+  }
+
+  function renderList() {
+    var listEl = document.getElementById("kcReviewList");
+    if (reviews.length === 0) {
+      listEl.innerHTML = '<p class="kc-empty">まだ口コミがありません。最初の口コミを投稿してみませんか？</p>';
+      return;
+    }
+    listEl.innerHTML = reviews.map(function (r) {
+      return (
+        '<div class="kc-review">' +
+        '<div class="kc-stars">' + renderStars(r.rating) + '</div>' +
+        '<p class="kc-comment">' + escapeHtml(r.comment) + '</p>' +
+        '<div class="kc-meta">' +
+        '<span>' + escapeHtml(r.nickname) + '様</span>' +
+        '<span>' + formatDate(r.createdAt) + '</span>' +
+        '</div></div>'
+      );
+    }).join("");
+  }
+
+  var starInput = document.getElementById("kcStarInput");
+  var ratingField = document.getElementById("kcRating");
+  starInput.querySelectorAll("button").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var value = Number(btn.dataset.value);
+      ratingField.value = value;
+      starInput.querySelectorAll("button").forEach(function (b) {
+        b.classList.toggle("active", Number(b.dataset.value) <= value);
+      });
+    });
+  });
+
+  document.getElementById("kcReviewForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var nickname = document.getElementById("kcNickname").value.trim();
+    var rating = Number(ratingField.value);
+    var comment = document.getElementById("kcComment").value.trim();
+
+    if (!nickname || !rating || !comment) {
+      showMsg("error", "すべての項目を入力してください。");
+      return;
+    }
+
+    reviews.unshift({ nickname: nickname, rating: rating, comment: comment, createdAt: new Date() });
+    renderList();
+
+    showMsg("success", "口コミを投稿しました（ダミー表示のため保存はされません）。");
+    document.getElementById("kcReviewForm").reset();
+    starInput.querySelectorAll("button").forEach(function (b) { b.classList.remove("active"); });
+  });
+})();
+</script>
+</body>
+</html>
