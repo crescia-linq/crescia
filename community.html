@@ -5,70 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>料理代行・家事支援コミュニティ「クレッシャ」</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Zen Kaku Gothic New', sans-serif; }
+        .font-heading { font-family: 'Zen Maru Gothic', 'Zen Kaku Gothic New', sans-serif; }
+        .font-num { font-family: 'Jost', 'Zen Kaku Gothic New', sans-serif; }
+        .placeholder-photo {
+            background-image: repeating-linear-gradient(135deg, rgba(255,122,0,0.06) 0px, rgba(255,122,0,0.06) 2px, transparent 2px, transparent 14px);
+        }
+    </style>
 </head>
-<body class="bg-white text-gray-800 font-sans antialiased">
+<body class="bg-[#FFFBF6] text-gray-800 antialiased">
 
-    <header class="relative bg-gradient-to-b from-orange-50 to-white pt-16 pb-20 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="inline-block bg-orange-100 text-orange-800 text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-                ✨ 5カ月ぶりの一斉募集：7月11日(土)～7月18日(土)
-            </span>
-            <p class="text-gray-600 text-sm md:text-base mb-3 font-medium">
-                全国21都道府県・総勢70名以上の仲間が活躍中
-            </p>
-            <h1 class="text-2xl md:text-4xl font-bold text-gray-950 leading-snug mb-8 tracking-tight">
-                料理代行・家事支援の未来をつくる<br class="hidden md:inline">
-                全国コミュニティ「クレッシャ」
-            </h1>
-            <div class="bg-amber-50/60 inline-block py-4 px-8 md:px-12 rounded-2xl border border-orange-100 mb-8">
-                <p class="text-lg md:text-2xl font-bold text-gray-800 leading-normal">
-                    「一人で悩む時間を、サービス向上の時間へ」
+    <nav class="sticky top-0 z-30 bg-[#FFFBF6]/90 backdrop-blur border-b border-orange-100/70">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <span class="font-heading font-bold text-lg tracking-wide text-gray-900">Crescia<span class="text-orange-500">.</span></span>
+            <a href="#pricing" class="text-xs md:text-sm font-bold text-white bg-[#FF7A00] hover:bg-[#FF9533] px-4 py-2 rounded-lg shadow-sm transition-colors">
+                プランを見る
+            </a>
+        </div>
+    </nav>
+
+    <header class="relative bg-gradient-to-b from-orange-50 to-[#FFFBF6] pt-12 pb-24 px-4 overflow-hidden">
+        <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+            <div class="text-center lg:text-left">
+                <span class="inline-block bg-orange-100 text-orange-800 text-[11px] md:text-sm font-bold px-4 py-1.5 rounded-md mb-5 tracking-wide">
+                    5カ月ぶりの一斉募集：7月11日(土)～7月18日(土)
+                </span>
+                <p class="text-gray-500 text-xs md:text-sm mb-3 font-medium font-num tracking-wide">
+                    全国21都道府県 ・ 総勢70名以上の仲間が活躍中
                 </p>
+                <h1 class="font-heading text-2xl md:text-4xl font-bold text-gray-900 leading-snug mb-7 tracking-tight">
+                    料理代行・家事支援の未来をつくる<br class="hidden lg:inline">
+                    全国コミュニティ「クレッシャ」
+                </h1>
+                <div class="bg-white/70 inline-block py-3.5 px-7 md:px-9 rounded-xl border border-orange-100 mb-8 shadow-sm">
+                    <p class="font-heading text-base md:text-xl font-bold text-gray-800 leading-normal">
+                        一人で悩む時間を、<br class="lg:hidden">サービス向上の時間へ
+                    </p>
+                </div>
+                <div>
+                    <a href="#pricing" class="inline-block bg-[#FF7A00] hover:bg-[#FF9533] text-white font-bold text-base px-8 py-3.5 rounded-lg shadow-md transition-all w-full sm:w-auto">
+                        プラン一覧を見て申し込む
+                    </a>
+                </div>
             </div>
-            <div>
-                <a href="#pricing" class="inline-block bg-[#FF7A00] hover:bg-[#FF9533] text-white font-bold text-base md:text-lg px-8 py-4 rounded-full shadow-md transition-all w-full sm:w-auto">
-                    プラン一覧を見て申し込む
-                </a>
+            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 via-amber-50 to-orange-50 placeholder-photo border border-orange-100 shadow-sm flex flex-col items-center justify-center gap-2 text-orange-300">
+                <i class="fa-regular fa-image text-4xl"></i>
+                <span class="text-[11px] tracking-wide font-num">Photo Coming Soon</span>
             </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full leading-none">
+            <svg viewBox="0 0 1440 60" class="w-full h-10 md:h-16" preserveAspectRatio="none">
+                <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="#FFFBF6"></path>
+            </svg>
         </div>
     </header>
 
-    <section class="py-16 px-4 bg-white">
+    <section class="py-16 px-4 bg-[#FFFBF6]">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-2xl font-bold text-center text-gray-900 mb-4">クレッシャとは？</h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed text-sm md:text-base">
+            <p class="text-center font-num text-xs tracking-[0.2em] text-orange-500 font-medium mb-2">ABOUT CRESCIA</p>
+            <h2 class="font-heading text-2xl font-bold text-center text-gray-900 mb-4">クレッシャとは？</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-14 leading-relaxed text-sm md:text-base">
                 現場でのリアルな気づきや悩みを共有し合い、料理代行サービスに特化したセミナーが受講可能なコミュニティです。
             </p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm text-center">
-                    <div class="w-12 h-12 bg-orange-500/10 text-orange-600 flex items-center justify-center rounded-xl mx-auto mb-4 text-xl">
-                        <i class="fa-solid fa-users"></i>
+
+            <div class="space-y-12">
+                <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-amber-50 placeholder-photo border border-orange-100 flex flex-col items-center justify-center gap-2 text-orange-300">
+                        <i class="fa-regular fa-image text-3xl"></i>
+                        <span class="text-[10px] tracking-wide font-num">Photo Coming Soon</span>
                     </div>
-                    <h3 class="font-bold text-base mb-2 text-gray-900">全国の仲間と繋がる</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed">21都道府県のスタッフが在籍。地域を越えて気軽に相談できる温かい環境です。</p>
+                    <div>
+                        <span class="inline-block w-8 h-8 rounded-full bg-orange-500 text-white text-xs font-num font-bold flex items-center justify-center mb-3">01</span>
+                        <h3 class="font-heading font-bold text-lg mb-2 text-gray-900">全国の仲間と繋がる</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">21都道府県のスタッフが在籍。地域を越えて気軽に相談できる温かい環境です。</p>
+                    </div>
                 </div>
-                <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm text-center">
-                    <div class="w-12 h-12 bg-orange-500/10 text-orange-600 flex items-center justify-center rounded-xl mx-auto mb-4 text-xl">
-                        <i class="fa-solid fa-book-open"></i>
+
+                <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+                    <div class="md:order-2 aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-amber-50 placeholder-photo border border-orange-100 flex flex-col items-center justify-center gap-2 text-orange-300">
+                        <i class="fa-regular fa-image text-3xl"></i>
+                        <span class="text-[10px] tracking-wide font-num">Photo Coming Soon</span>
                     </div>
-                    <h3 class="font-bold text-base mb-2 text-gray-900">前向きに学ぶ</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed">一人で悩む時間をなくし、現場で役立つ情報やスキルをみんなでシェアしていきます。</p>
+                    <div class="md:order-1">
+                        <span class="inline-block w-8 h-8 rounded-full bg-orange-500 text-white text-xs font-num font-bold flex items-center justify-center mb-3">02</span>
+                        <h3 class="font-heading font-bold text-lg mb-2 text-gray-900">前向きに学ぶ</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">一人で悩む時間をなくし、現場で役立つ情報やスキルをみんなでシェアしていきます。</p>
+                    </div>
                 </div>
-                <div class="p-6 bg-white rounded-2xl border border-gray-100 shadow-sm text-center">
-                    <div class="w-12 h-12 bg-orange-500/10 text-orange-600 flex items-center justify-center rounded-xl mx-auto mb-4 text-xl">
-                        <i class="fa-solid fa-briefcase"></i>
+
+                <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
+                    <div class="aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-amber-50 placeholder-photo border border-orange-100 flex flex-col items-center justify-center gap-2 text-orange-300">
+                        <i class="fa-regular fa-image text-3xl"></i>
+                        <span class="text-[10px] tracking-wide font-num">Photo Coming Soon</span>
                     </div>
-                    <h3 class="font-bold text-base mb-2 text-gray-900">仕事に活かす</h3>
-                    <p class="text-xs text-gray-600 leading-relaxed">スキルを磨くだけでなく、ポートフォリオを通じて実際の活動や仕事へと繋げます。</p>
+                    <div>
+                        <span class="inline-block w-8 h-8 rounded-full bg-orange-500 text-white text-xs font-num font-bold flex items-center justify-center mb-3">03</span>
+                        <h3 class="font-heading font-bold text-lg mb-2 text-gray-900">仕事に活かす</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">スキルを磨くだけでなく、ポートフォリオを通じて実際の活動や仕事へと繋げます。</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 px-4 bg-orange-50/40">
+    <section class="py-14 px-4 bg-gradient-to-r from-orange-500 to-orange-400">
+        <div class="max-w-4xl mx-auto grid grid-cols-3 gap-4 text-center text-white">
+            <div>
+                <p class="font-num text-3xl md:text-5xl font-semibold">21</p>
+                <p class="text-[11px] md:text-sm mt-1 tracking-wide opacity-90">都道府県で活動中</p>
+            </div>
+            <div class="border-x border-white/30">
+                <p class="font-num text-3xl md:text-5xl font-semibold">70<span class="text-xl md:text-2xl">+</span></p>
+                <p class="text-[11px] md:text-sm mt-1 tracking-wide opacity-90">名の仲間が在籍</p>
+            </div>
+            <div>
+                <p class="font-num text-3xl md:text-5xl font-semibold">1,890</p>
+                <p class="text-[11px] md:text-sm mt-1 tracking-wide opacity-90">円〜 / 月で参加可能</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 px-4 bg-[#FFFBF6]">
         <div class="max-w-2xl mx-auto bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-orange-100">
-            <h2 class="text-lg md:text-xl font-bold text-center text-gray-900 mb-6">こんな方におすすめです</h2>
+            <h2 class="font-heading text-lg md:text-xl font-bold text-center text-gray-900 mb-6">こんな方におすすめです</h2>
             <ul class="space-y-3 mb-0 text-sm md:text-base">
                 <li class="flex items-center gap-3 text-gray-700">
                     <i class="fa-solid fa-check text-orange-500"></i> 料理代行を始めたいけれど、少し不安がある
@@ -91,40 +155,118 @@
 
     <section class="py-16 px-4 bg-white">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-xl md:text-2xl font-bold text-center text-gray-900 mb-10">心地よく学べる6つのコンテンツ</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-                <div class="p-5 border border-gray-100 rounded-xl bg-white">
-                    <h4 class="font-bold text-gray-900 mb-1.5"><i class="fa-brands fa-discord text-orange-500 mr-1.5"></i>Discordコミュニティ</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">スマホ一つで、全国の仲間といつでもチャットで気軽に交流できます。</p>
+            <p class="text-center font-num text-xs tracking-[0.2em] text-orange-500 font-medium mb-2">CONTENTS</p>
+            <h2 class="font-heading text-xl md:text-2xl font-bold text-center text-gray-900 mb-10">心地よく学べる6つのコンテンツ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-sm">
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-[#FFFBF6] border border-orange-100/70">
+                    <div class="w-11 h-11 shrink-0 bg-white text-orange-500 flex items-center justify-center rounded-xl border border-orange-100 text-lg">
+                        <i class="fa-brands fa-discord"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-bold text-gray-900 mb-1">Discordコミュニティ</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">スマホ一つで、全国の仲間といつでもチャットで気軽に交流できます。</p>
+                    </div>
                 </div>
-                <div class="p-5 border border-gray-100 rounded-xl bg-white">
-                    <h4 class="font-bold text-gray-900 mb-1.5"><i class="fa-solid fa-mug-hot text-orange-500 mr-1.5"></i>定期交流会</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">オンラインで顔を合わせ、日頃の工夫や嬉しかったことを和やかにシェア。</p>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-[#FFFBF6] border border-orange-100/70">
+                    <div class="w-11 h-11 shrink-0 bg-white text-orange-500 flex items-center justify-center rounded-xl border border-orange-100 text-lg">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-bold text-gray-900 mb-1">定期交流会</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">オンラインで顔を合わせ、日頃の工夫や嬉しかったことを和やかにシェア。</p>
+                    </div>
                 </div>
-                <div class="p-5 border border-gray-100 rounded-xl bg-white">
-                    <h4 class="font-bold text-gray-900 mb-1.5"><i class="fa-solid fa-graduation-cap text-orange-500 mr-1.5"></i>勉強会</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">メニュー構成や時短の工夫など、現場で即役立つ知識を深めます。</p>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-[#FFFBF6] border border-orange-100/70">
+                    <div class="w-11 h-11 shrink-0 bg-white text-orange-500 flex items-center justify-center rounded-xl border border-orange-100 text-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-bold text-gray-900 mb-1">勉強会</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">メニュー構成や時短の工夫など、現場で即役立つ知識を深めます。</p>
+                    </div>
                 </div>
-                <div class="p-5 border border-gray-100 rounded-xl bg-white">
-                    <h4 class="font-bold text-gray-900 mb-1.5"><i class="fa-solid fa-shield text-orange-500 mr-1.5"></i>専門家情報</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">衛生管理や契約など、プロとして知っておきたい大切な基本を守ります。</p>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-[#FFFBF6] border border-orange-100/70">
+                    <div class="w-11 h-11 shrink-0 bg-white text-orange-500 flex items-center justify-center rounded-xl border border-orange-100 text-lg">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-bold text-gray-900 mb-1">専門家情報</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">衛生管理や契約など、プロとして知っておきたい大切な基本を守ります。</p>
+                    </div>
                 </div>
-                <div class="p-5 border border-gray-100 rounded-xl bg-white">
-                    <h4 class="font-bold text-gray-900 mb-1.5"><i class="fa-solid fa-handshake text-orange-500 mr-1.5"></i>仕事情報</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">活動の幅を広げたい方に向けた、新しい機会のご案内。</p>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-[#FFFBF6] border border-orange-100/70">
+                    <div class="w-11 h-11 shrink-0 bg-white text-orange-500 flex items-center justify-center rounded-xl border border-orange-100 text-lg">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-bold text-gray-900 mb-1">仕事情報</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">活動の幅を広げたい方に向けた、新しい機会のご案内。</p>
+                    </div>
                 </div>
-                <div class="p-5 border border-gray-100 rounded-xl bg-white">
-                    <h4 class="font-bold text-gray-900 mb-1.5"><i class="fa-solid fa-heart text-orange-500 mr-1.5"></i>仲間との相談</h4>
-                    <p class="text-xs text-gray-600 leading-relaxed">「こんな時どうしてる？」に、みんなが優しく答えてくれる安心の場所です。</p>
+                <div class="flex items-start gap-4 p-5 rounded-xl bg-[#FFFBF6] border border-orange-100/70">
+                    <div class="w-11 h-11 shrink-0 bg-white text-orange-500 flex items-center justify-center rounded-xl border border-orange-100 text-lg">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-heading font-bold text-gray-900 mb-1">仲間との相談</h4>
+                        <p class="text-xs text-gray-600 leading-relaxed">「こんな時どうしてる？」に、みんなが優しく答えてくれる安心の場所です。</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="pricing" class="py-16 px-4 bg-gray-50 border-t border-b border-gray-100">
+    <section class="py-16 px-4 bg-[#FFFBF6] border-t border-orange-100/60">
+        <div class="max-w-5xl mx-auto">
+            <p class="text-center font-num text-xs tracking-[0.2em] text-orange-500 font-medium mb-2">MEMBER'S VOICE</p>
+            <h2 class="font-heading text-xl md:text-2xl font-bold text-center text-gray-900 mb-3">仲間たちの声</h2>
+            <p class="text-center text-[11px] text-gray-400 mb-10">※実際のメンバーの声を今後掲載予定です（現在は仮のコメントです）</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-amber-50 flex items-center justify-center text-orange-300 border border-orange-100">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <p class="font-heading font-bold text-sm text-gray-900">K.Sさん</p>
+                            <p class="text-[11px] text-gray-400">東京都 / 活動歴1年</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">一人で悩んでいた衛生管理の疑問を、すぐに先輩方に相談できて安心しました。</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-amber-50 flex items-center justify-center text-orange-300 border border-orange-100">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <p class="font-heading font-bold text-sm text-gray-900">A.Yさん</p>
+                            <p class="text-[11px] text-gray-400">大阪府 / 活動歴3年</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">ポートフォリオを作ってから、お客さまからのご依頼が目に見えて増えました。</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border border-orange-100 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-orange-100 to-amber-50 flex items-center justify-center text-orange-300 border border-orange-100">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div>
+                            <p class="font-heading font-bold text-sm text-gray-900">M.Tさん</p>
+                            <p class="text-[11px] text-gray-400">福岡県 / 活動歴半年</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-600 leading-relaxed">初心者の私でも、勉強会でしっかり基礎から学べて前向きに続けられています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-16 px-4 bg-white border-t border-b border-orange-100/60">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">プランのご案内</h2>
+                <p class="font-num text-xs tracking-[0.2em] text-orange-500 font-medium mb-2">PLAN</p>
+                <h2 class="font-heading text-2xl md:text-3xl font-bold text-gray-900">プランのご案内</h2>
                 <p class="text-xs text-gray-500 mt-2">【全プラン募集期間：7月11日～7月18日】※5カ月ぶりの受付となります</p>
             </div>
 
@@ -133,9 +275,9 @@
                     <div>
                         <div class="text-center pb-4 mb-4 border-b border-gray-100">
                             <p class="font-medium text-gray-400 text-xs">仲間と繋がり、共に学びたい方</p>
-                            <h3 class="text-lg font-bold text-gray-900 mt-1">コミュニティ【クレッシャ】</h3>
+                            <h3 class="font-heading text-lg font-bold text-gray-900 mt-1">コミュニティ【クレッシャ】</h3>
                             <div class="mt-3">
-                                <span class="text-2xl font-bold text-gray-900">月額 1,890円</span>
+                                <span class="font-num text-2xl font-semibold text-gray-900">月額 1,890円</span>
                             </div>
                         </div>
                         <ul class="space-y-2.5 text-xs text-gray-600 mb-6">
@@ -149,27 +291,27 @@
                     </a>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 shadow-md border-2 border-orange-400 relative flex flex-col justify-between transform lg:scale-105 z-10">
-                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-11/12 text-center shadow-md">
-                        <div class="bg-orange-500 text-white font-bold text-[11px] py-0.5 rounded-t-xl tracking-wide">
-                            👑 人気プラン！仕事に繋げるポートフォリオ機能つき
-                        </div>
-                        <div class="bg-red-500 text-white font-bold text-[11px] py-0.5 rounded-b-xl tracking-wide border-t border-orange-300">
-                            ✨ 今回の募集限定：初回登録費 10,000円 ⇒ 50%OFF（5,000円）
-                        </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg border-2 border-orange-400 relative flex flex-col justify-between lg:scale-105 z-10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                        <span class="inline-flex items-center gap-1.5 bg-orange-500 text-white font-bold text-[11px] px-4 py-1.5 rounded-full shadow-sm tracking-wide whitespace-nowrap">
+                            <i class="fa-solid fa-crown text-[10px]"></i> 人気プラン
+                        </span>
                     </div>
-                    <div class="pt-4">
+                    <div class="pt-5">
                         <div class="text-center pb-4 mb-4 border-b border-gray-100">
                             <p class="font-medium text-orange-600 text-[10px]">【システム利用料 ＋ コミュニティ会費】</p>
-                            <h3 class="text-lg font-bold text-gray-900 mt-1">ポートフォリオ【クレッシャ＋α】</h3>
+                            <h3 class="font-heading text-lg font-bold text-gray-900 mt-1">ポートフォリオ【クレッシャ＋α】</h3>
                             <div class="mt-3">
-                                <span class="text-3xl font-bold text-gray-900">月額 4,000円</span>
+                                <span class="font-num text-3xl font-semibold text-gray-900">月額 4,000円</span>
                             </div>
-                            <span class="text-xs font-bold text-orange-700 bg-orange-50 px-3 py-1 rounded-full inline-block mt-2">
+                            <span class="text-xs font-bold text-orange-700 bg-orange-50 px-3 py-1 rounded-md inline-block mt-2">
                                 還元コインつきで実質 2,000円！
                             </span>
+                            <p class="text-[11px] text-red-500 font-bold mt-2">
+                                今回の募集限定：初回登録費 10,000円 ⇒ 50%OFF（5,000円）
+                            </p>
                         </div>
-                        <div class="border border-gray-200 rounded-xl overflow-hidden mb-4 text-xs text-gray-600 shadow-sm">
+                        <div class="border border-gray-200 rounded-xl overflow-hidden mb-4 text-xs text-gray-600">
                             <div class="flex border-b border-gray-200">
                                 <div class="w-1/2 bg-gray-50 p-2 text-center font-bold border-r border-gray-200">2,000円</div>
                                 <div class="w-1/2 p-2 bg-white text-center">システム利用料</div>
@@ -199,10 +341,10 @@
                     <div>
                         <div class="text-center pb-4 mb-4 border-b border-gray-100">
                             <p class="font-medium text-gray-400 text-xs">プロとして開業・自立を目指す方</p>
-                            <h3 class="text-lg font-bold text-gray-900 mt-1">講座【CQS】</h3>
+                            <h3 class="font-heading text-lg font-bold text-gray-900 mt-1">講座【CQS】</h3>
                             <p class="text-[11px] text-red-600 font-semibold mt-1">※定員5名（先着順）</p>
                             <div class="mt-3">
-                                <span class="text-2xl font-bold text-gray-900">135,000円</span> <span class="text-xs text-gray-400">(税込)</span>
+                                <span class="font-num text-2xl font-semibold text-gray-900">135,000円</span> <span class="text-xs text-gray-400">(税込)</span>
                             </div>
                         </div>
                         <ul class="space-y-2 text-[11px] text-gray-500 mb-6 grid grid-cols-2 gap-1 bg-gray-50 p-2.5 rounded-xl">
@@ -224,12 +366,13 @@
         </div>
     </section>
 
-    <section class="py-16 px-4 bg-white">
+    <section class="py-16 px-4 bg-[#FFFBF6]">
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-xl font-bold text-center text-gray-900 mb-8">よくある質問</h2>
+            <p class="text-center font-num text-xs tracking-[0.2em] text-orange-500 font-medium mb-2">FAQ</p>
+            <h2 class="font-heading text-xl font-bold text-center text-gray-900 mb-8">よくある質問</h2>
             <div class="space-y-4">
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="w-full text-left p-4 font-semibold flex justify-between items-center bg-gray-50 hover:bg-gray-100/50 text-sm toggle-faq">
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-white">
+                    <button class="w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-orange-50/40 text-sm toggle-faq">
                         <span>Q. 初心者でも参加できますか？</span>
                         <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform"></i>
                     </button>
@@ -237,8 +380,8 @@
                         A. 大歓迎です。これから活動を始めたいという方もたくさん在籍しています。基本の知識や心構えを最初から学べるため、安心して一歩を踏み出していただけます。
                     </div>
                 </div>
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="w-full text-left p-4 font-semibold flex justify-between items-center bg-gray-50 hover:bg-gray-100/50 text-sm toggle-faq">
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-white">
+                    <button class="w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-orange-50/40 text-sm toggle-faq">
                         <span>Q. 全国どこからでも参加できますか？</span>
                         <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform"></i>
                     </button>
@@ -246,8 +389,8 @@
                         A. はい、オンラインでの活動が中心となりますので、全国どこからでもご参加いただけます。すでに21都道府県から多くの仲間が集まっています。
                     </div>
                 </div>
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button class="w-full text-left p-4 font-semibold flex justify-between items-center bg-gray-50 hover:bg-gray-100/50 text-sm toggle-faq">
+                <div class="border border-gray-200 rounded-xl overflow-hidden bg-white">
+                    <button class="w-full text-left p-4 font-semibold flex justify-between items-center hover:bg-orange-50/40 text-sm toggle-faq">
                         <span>Q. 還元コインはどのように使えますか？</span>
                         <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform"></i>
                     </button>
@@ -259,10 +402,10 @@
         </div>
     </section>
 
-    <section id="contact" class="py-16 px-4 bg-gradient-to-b from-white to-orange-50 border-t border-orange-100">
+    <section id="contact" class="py-16 px-4 bg-gradient-to-b from-[#FFFBF6] to-orange-50 border-t border-orange-100">
         <div class="max-w-xl mx-auto">
             <div class="text-center mb-10">
-                <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-3">一緒に料理代行の未来をつくりませんか？</h2>
+                <h2 class="font-heading text-xl md:text-2xl font-bold text-gray-900 mb-3">一緒に料理代行の未来をつくりませんか？</h2>
                 <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
                     一人では難しいことも、仲間となら実現できる。<br>
                     あなたの挑戦をクレッシャが優しくサポートします。
@@ -299,7 +442,8 @@
         </div>
     </section>
 
-    <footer class="bg-gray-50 text-gray-400 py-6 text-center text-[10px] border-t border-gray-100">
+    <footer class="bg-[#FFFBF6] text-gray-400 py-8 text-center text-[11px] border-t border-orange-100">
+        <p class="font-heading font-bold text-gray-600 mb-2">Crescia</p>
         <p>&copy; 2026 クレッシャ All Rights Reserved.</p>
     </footer>
 
