@@ -225,7 +225,6 @@
                         </div>
                         <div>
                             <p class="font-heading font-bold text-sm text-gray-900">K.Sさん</p>
-                            <p class="text-[11px] text-gray-400">東京都 / 活動歴1年</p>
                         </div>
                     </div>
                     <p class="text-xs text-gray-600 leading-relaxed">一人で悩んでいた、どこを調べてもないリアルな疑問を、すぐに先輩方に相談できて安心しました。</p>
@@ -237,7 +236,6 @@
                         </div>
                         <div>
                             <p class="font-heading font-bold text-sm text-gray-900">A.Yさん</p>
-                            <p class="text-[11px] text-gray-400">大阪府 / 活動歴3年</p>
                         </div>
                     </div>
                     <p class="text-xs text-gray-600 leading-relaxed">料理代行に特化したセミナーなので、ほかのどこにもない学びが得られます。</p>
@@ -249,7 +247,6 @@
                         </div>
                         <div>
                             <p class="font-heading font-bold text-sm text-gray-900">M.Tさん</p>
-                            <p class="text-[11px] text-gray-400">福岡県 / 活動歴半年</p>
                         </div>
                     </div>
                     <p class="text-xs text-gray-600 leading-relaxed">初心者の私でも、勉強会でしっかり基礎から学べて前向きに続けられています。</p>
@@ -340,9 +337,9 @@
                         </div>
                         <ul class="space-y-2.5 text-xs text-gray-600 mb-6 font-medium">
                             <li><i class="fa-solid fa-circle-check text-orange-500 mr-1.5"></i> コミュニティ【クレッシャ】全機能</li>
-                            <li><i class="fa-solid fa-circle-check text-orange-500 mr-1.5"></i> 依頼に繋がる専用ポートフォリオの作成</li>
+                            <li><i class="fa-solid fa-circle-check text-orange-500 mr-1.5"></i> 専用ポートフォリオの作成</li>
                             <li><i class="fa-solid fa-circle-check text-orange-500 mr-1.5"></i> プロフィール一般公開＆実績掲載</li>
-                            <li><i class="fa-solid fa-circle-check text-orange-500 mr-1.5"></i> 依頼受付機能</li>
+                            <li><i class="fa-solid fa-circle-check text-orange-500 mr-1.5"></i> 検索に強い「地域名×料理代行」</li>
                         </ul>
                     </div>
                     <a href="#contact" onclick="selectPlan(0)" class="block text-center bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-bold py-3 rounded-xl text-sm shadow transition-all">
@@ -354,7 +351,7 @@
                     <div>
                         <div class="text-center pb-4 mb-4 border-b border-gray-100">
                             <p class="font-medium text-gray-400 text-xs">プロとして開業・自立を目指す方</p>
-                            <h3 class="font-heading text-lg font-bold text-gray-900 mt-1">講座【CQS】</h3>
+                            <h3 class="font-heading text-lg font-bold text-gray-900 mt-1">クレッシャ認定【CQS】</h3>
                             <p class="text-[11px] text-red-600 font-semibold mt-1">※定員5名（先着順）</p>
                             <div class="mt-3">
                                 <span class="font-num text-2xl font-semibold text-gray-900">135,000円</span> <span class="text-xs text-gray-400">(税込)</span>
@@ -542,27 +539,27 @@
                 </p>
             </div>
             <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-200">
-                <form onsubmit="alert('デモ送信が完了しました！'); return false;" class="space-y-5">
+                <form onsubmit="const plan=document.getElementById('plan-select').selectedOptions[0].textContent; const name=document.getElementById('contact-name').value; const email=document.getElementById('contact-email').value; const message=document.getElementById('contact-message').value; const body='ご希望のプラン: '+plan+'\n\nお名前: '+name+'\nメールアドレス: '+email+'\nメッセージ: '+message; window.location.href='mailto:crescia@trust-linq.com?subject='+encodeURIComponent('クレッシャ お申し込み')+'&body='+encodeURIComponent(body); return false;" class="space-y-5">
                     <div>
                         <label class="block text-xs font-bold text-gray-700 mb-1">ご希望のプラン</label>
                         <select id="plan-select" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 bg-gray-50 focus:outline-none focus:ring-1 focus:ring-orange-500 font-medium text-xs">
                             <option value="0">【今回の募集限定・登録費50%OFF】ポートフォリオ【クレッシャ＋α】(月額4,000円：実質2,000円)</option>
                             <option value="1">コミュニティ【クレッシャ】(月額1,890円)</option>
-                            <option value="2">講座【CQS】(135,000円 / 定員5名)</option>
+                            <option value="2">クレッシャ認定【CQS】(135,000円 / 定員5名)</option>
                             <option value="3">その他（ご質問など）</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 mb-1">お名前 <span class="text-red-500">*</span></label>
-                        <input type="text" required placeholder="山田 花子" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-orange-500 text-xs">
+                        <input type="text" id="contact-name" required placeholder="山田 花子" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-orange-500 text-xs">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 mb-1">メールアドレス <span class="text-red-500">*</span></label>
-                        <input type="email" required placeholder="example@email.com" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-orange-500 text-xs">
+                        <input type="email" id="contact-email" required placeholder="example@email.com" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-orange-500 text-xs">
                     </div>
                     <div>
                         <label class="block text-xs font-bold text-gray-700 mb-1">メッセージ（任意）</label>
-                        <textarea placeholder="ご質問や確認したいことがあればご記入ください" rows="3" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-orange-500 text-xs"></textarea>
+                        <textarea id="contact-message" placeholder="ご質問や確認したいことがあればご記入ください" rows="3" class="w-full border border-gray-300 rounded-xl px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-orange-500 text-xs"></textarea>
                     </div>
                     <button type="submit" class="w-full bg-gradient-to-r from-orange-500 to-orange-400 hover:from-orange-600 hover:to-orange-500 text-white font-bold py-3.5 rounded-xl shadow-sm transition-all text-center text-sm">
                         この内容で申し込む（7月18日まで）
