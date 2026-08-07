@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クレッシャ認定｜専門家監修 料理代行スタートパック</title>
+    <meta name="description" content="現役料理代行人と行政書士・税理士等専門家が監修。料理代行を仕事として始めるための安心の土台を作る『料理代行スタートプログラム』">
+    
+    <!-- Open Graph / Facebook / LINE -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="クレッシャ認定 料理代行スタートパック">
+    <meta property="og:description" content="専門家と築く、料理代行という仕事の土台。無料オンライン相談会開催中！">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Noto+Serif+JP:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#E29A10',
+                            goldLight: '#F7C96E',
+                            goldBg: '#FAF5EC',
+                            green: '#3D5B45',
+                            greenLight: '#688871',
+                            greenBg: '#F3F6F4',
+                            beige: '#FAF8F5',
+                            beigeDark: '#EFECE6',
+                            text: '#2C2A29',
+                            muted: '#6B6661'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif JP"', 'serif'],
+                        sans: ['"Zen Kaku Gothic New"', 'sans-serif'],
+                        en: ['"Cormorant Garamond"', 'serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(226, 154, 16, 0.08)',
+                        'card': '0 10px 30px rgba(0, 0, 0, 0.04)',
+                        'float': '0 15px 35px rgba(61, 91, 69, 0.15)',
+                        'glow': '0 0 25px rgba(226, 154, 16, 0.4)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Fine-tuning */
+        body {
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            color: #2C2A29;
+            background-color: #FAF8F5;
+            overflow-x: hidden;
+        }
+
+        .font-serif-jp {
+            font-family: 'Noto Serif JP', serif;
+        }
+
+        /* Hero shine effect on CTA */
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(200%) rotate(45deg); }
+        }
+
+        .btn-shine {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-shine::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                60deg,
+                rgba(255, 255, 255, 0) 20%,
+                rgba(255, 255, 255, 0.4) 50%,
+                rgba(255, 255, 255, 0) 80%
+            );
+            transform: rotate(30deg);
+            animation: shine 4s infinite;
+        }
+
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.8s ease-out;
+        }
+
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Accordion transition */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-in-out, opacity 0.3s ease-in-out;
+            opacity: 0;
+        }
+
+        .faq-answer.open {
+            opacity: 1;
+        }
+
+        /* Gold gradient text */
+        .text-gold-gradient {
+            background: linear-gradient(135deg, #D48806 0%, #E29A10 50%, #B87300 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Subtle grid background pattern */
+        .bg-pattern {
+            background-image: radial-gradient(#E29A10 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="antialiased text-brand-text">
+
+    <!-- Header Navigation -->
+    <header id="header" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 py-3 bg-white/90 backdrop-blur-md border-b border-brand-beigeDark/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <!-- SVG Logo inspired by uploaded image -->
+                <svg class="h-10 w-auto" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="150" cy="150" r="142" stroke="#E29A10" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="136" stroke="#E29A10" stroke-width="1.5"/>
+                    <!-- Top Whisk Icon -->
+                    <circle cx="150" cy="90" r="32" fill="#E29A10"/>
+                    <path d="M150 68 V78" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M150 78 C142 88 140 102 150 110 C160 102 158 88 150 78 Z" stroke="white" stroke-width="1.5" fill="none"/>
+                    <path d="M150 78 C145 88 145 100 150 108" stroke="white" stroke-width="1.2" fill="none"/>
+                    <path d="M150 78 C155 88 155 100 150 108" stroke="white" stroke-width="1.2" fill="none"/>
+                    <!-- Crescia Text -->
+                    <text x="150" y="175" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-style="italic" font-size="52" fill="#2C2A29" font-weight="600">Crescia</text>
+                    <!-- Subtext -->
+                    <text x="150" y="202" text-anchor="middle" font-family="'Noto Serif JP', serif" font-size="14" fill="#2C2A29" letter-spacing="1.5">＝全国料理代行サロン＝</text>
+                    <!-- Bottom Leaves -->
+                    <path d="M150 220 Q150 240 150 248 Q150 240 150 220 Z" fill="#E29A10"/>
+                    <path d="M148 228 C140 230 134 238 135 245 C142 245 148 238 148 228 Z" fill="#F7C96E"/>
+                    <path d="M152 228 C160 230 166 238 165 245 C158 245 152 238 152 228 Z" fill="#E29A10"/>
+                </svg>
+            </a>
+            
+            <a href="https://forms.gle/k1NfrK2Xj6eswHF6A" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-brand-gold text-white font-medium text-sm hover:bg-amber-600 transition-colors shadow-md shadow-amber-500/10">
+                <i class="fa-regular fa-paper-plane mr-2"></i> 受講する
+            </a>
+        </div>
+    </header>
+
+    <!-- First View / Hero Section -->
+    <section class="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-brand-beige via-white to-brand-beige overflow-hidden">
+        <div class="absolute inset-0 bg-pattern pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto">
+                <!-- Badge -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-goldBg border border-brand-gold/30 text-brand-gold text-xs sm:text-sm font-semibold tracking-wider mb-6 fade-in-up">
+                    <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                    クレッシャ認定｜専門家監修
+                </div>
+                
+                <!-- Main Copy -->
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif-jp font-bold text-brand-text leading-tight sm:leading-snug mb-6 fade-in-up" style="transition-delay: 0.1s;">
+                    専門家と築く、<br>
+                    <span class="text-gold-gradient relative inline-block">
+                        料理代行
+                        <svg class="absolute -bottom-2 left-0 w-full h-2 text-brand-gold/30" viewBox="0 0 100 20" preserveAspectRatio="none">
+                            <path d="M0 15 Q 50 0 100 15" fill="none" stroke="currentColor" stroke-width="6"/>
+                        </svg>
+                    </span>という仕事の土台。
+                </h1>
+
+                <!-- Sub Copy intro -->
+                <p class="text-base sm:text-lg text-brand-muted leading-relaxed mb-8 fade-in-up" style="transition-delay: 0.2s;">
+                    料理代行を仕事として始めるために必要な
+                </p>
+
+                <!-- Keywords Pill Grid -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 fade-in-up" style="transition-delay: 0.3s;">
+                    <span class="px-4 py-2 rounded-xl bg-white border border-brand-beigeDark shadow-sm text-sm font-medium text-brand-text flex items-center gap-2">
+                        <i class="fa-solid fa-shield-virus text-brand-gold"></i> 衛生
+                    </span>
+                    <span class="px-4 py-2 rounded-xl bg-white border border-brand-beigeDark shadow-sm text-sm font-medium text-brand-text flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced text-brand-gold"></i> 法務
+                    </span>
+                    <span class="px-4 py-2 rounded-xl bg-white border border-brand-beigeDark shadow-sm text-sm font-medium text-brand-text flex items-center gap-2">
+                        <i class="fa-solid fa-file-shield text-brand-gold"></i> 保険
+                    </span>
+                    <span class="px-4 py-2 rounded-xl bg-white border border-brand-beigeDark shadow-sm text-sm font-medium text-brand-text flex items-center gap-2">
+                        <i class="fa-solid fa-calculator text-brand-gold"></i> 経理
+                    </span>
+                    <span class="px-4 py-2 rounded-xl bg-white border border-brand-beigeDark shadow-sm text-sm font-medium text-brand-text flex items-center gap-2">
+                        <i class="fa-solid fa-utensils text-brand-gold"></i> サービス設計
+                    </span>
+                </div>
+
+                <p class="text-sm sm:text-base text-brand-text font-medium leading-relaxed max-w-2xl mx-auto mb-10 fade-in-up" style="transition-delay: 0.4s;">
+                    現役料理代行人の実践知識と、各分野の専門家監修で学ぶ、<br class="hidden sm:inline">
+                    安心と信頼の料理代行スタートプログラム。
+                </p>
+
+                <!-- CTA Container -->
+                <div id="cta-section" class="bg-white p-6 sm:p-8 rounded-3xl shadow-soft border border-brand-gold/20 max-w-xl mx-auto fade-in-up" style="transition-delay: 0.5s;">
+                    <h3 class="text-lg sm:text-xl font-serif-jp font-bold mb-4">クレッシャ認定 料理代行スタートパック</h3>
+                    <a href="https://forms.gle/k1NfrK2Xj6eswHF6A" target="_blank" rel="noopener" class="btn-shine w-full group inline-flex items-center justify-center gap-3 px-8 py-4 sm:py-5 rounded-2xl bg-gradient-to-r from-brand-gold via-amber-500 to-amber-600 text-white font-bold text-lg sm:text-xl shadow-glow hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                        <span>受講する</span>
+                        <i class="fa-solid fa-chevron-right text-sm transition-transform group-hover:translate-x-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 共感セクション (Problem / Empathy) -->
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 fade-in-up">
+                <span class="text-brand-gold font-en text-2xl font-semibold block mb-1">Check List</span>
+                <h2 class="text-2xl sm:text-4xl font-serif-jp font-bold text-brand-text">こんなお悩みありませんか？</h2>
+                <div class="w-12 h-1 bg-brand-gold mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <!-- Card Checklist -->
+            <div class="bg-brand-beige rounded-3xl p-6 sm:p-10 shadow-card border border-brand-beigeDark mb-12 fade-in-up">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm">
+                        <div class="w-6 h-6 rounded-full bg-amber-100 text-brand-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-medium">料理代行を始めたいが何からすれば？</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm">
+                        <div class="w-6 h-6 rounded-full bg-amber-100 text-brand-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-medium">契約書は必要なの？書き方が分からない</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm">
+                        <div class="w-6 h-6 rounded-full bg-amber-100 text-brand-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-medium">万が一の事故やトラブルが不安</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm">
+                        <div class="w-6 h-6 rounded-full bg-amber-100 text-brand-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-medium">適正な価格設定の基準が分からない</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm">
+                        <div class="w-6 h-6 rounded-full bg-amber-100 text-brand-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-medium">自分に合ったサービス設計ができない</span>
+                    </div>
+                    <div class="flex items-start gap-3 bg-white p-4 rounded-2xl shadow-sm">
+                        <div class="w-6 h-6 rounded-full bg-amber-100 text-brand-gold flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <span class="text-sm sm:text-base font-medium">料理は得意だけど「仕事」にする方法が不安</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight Box -->
+            <div class="bg-gradient-to-r from-brand-green to-brand-greenLight rounded-3xl p-8 sm:p-10 text-white relative overflow-hidden shadow-float fade-in-up">
+                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                <div class="relative z-10 max-w-2xl mx-auto text-center space-y-4">
+                    <p class="text-base sm:text-lg font-medium opacity-90">
+                        SNSにはレシピや集客方法の情報はたくさん溢れています。
+                    </p>
+                    <div class="py-2">
+                        <p class="text-xl sm:text-2xl font-serif-jp font-bold text-amber-200">しかし、</p>
+                    </div>
+                    <p class="text-lg sm:text-xl font-serif-jp font-semibold leading-relaxed">
+                        料理代行に特化した「専門家による基礎知識」を<br class="hidden sm:inline">
+                        体系的に学べる機会は、ほとんどありません。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- クレッシャ認定スタートパックとは (Solution & Experts) -->
+    <section class="py-16 md:py-24 bg-brand-beige">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-brand-gold font-en text-2xl font-semibold block mb-1">About Program</span>
+                <h2 class="text-2xl sm:text-4xl font-serif-jp font-bold text-brand-text mb-4">
+                    クレッシャ認定スタートパックとは
+                </h2>
+                <p class="text-base sm:text-lg text-brand-muted leading-relaxed">
+                    現役料理代行人と各分野の専門家が共同監修。<br>
+                    料理代行を一生の仕事として始めるための<br>
+                    <strong class="text-brand-gold font-serif-jp text-lg sm:text-xl">「安心して続けるための土台」</strong>を学ぶプログラムです。
+                </p>
+            </div>
+
+            <!-- Experts Grid -->
+            <div class="mb-16">
+                <h3 class="text-center font-serif-jp font-bold text-lg sm:text-xl mb-8 text-brand-text flex items-center justify-center gap-3">
+                    <span class="w-8 h-px bg-brand-gold"></span>
+                    豪華な専門家監修陣
+                    <span class="w-8 h-px bg-brand-gold"></span>
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 fade-in-up">
+                    <div class="bg-white p-6 rounded-2xl text-center shadow-card border border-brand-beigeDark hover:border-brand-gold/40 transition-all">
+                        <div class="w-14 h-14 rounded-full bg-brand-goldBg text-brand-gold mx-auto flex items-center justify-center text-2xl mb-3">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <h4 class="font-bold text-base mb-1">行政書士</h4>
+                        <p class="text-xs text-brand-muted">契約書・規約監修</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl text-center shadow-card border border-brand-beigeDark hover:border-brand-gold/40 transition-all">
+                        <div class="w-14 h-14 rounded-full bg-brand-goldBg text-brand-gold mx-auto flex items-center justify-center text-2xl mb-3">
+                            <i class="fa-solid fa-calculator"></i>
+                        </div>
+                        <h4 class="font-bold text-base mb-1">税理士</h4>
+                        <p class="text-xs text-brand-muted">経理・確定申告監修</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl text-center shadow-card border border-brand-beigeDark hover:border-brand-gold/40 transition-all">
+                        <div class="w-14 h-14 rounded-full bg-brand-goldBg text-brand-gold mx-auto flex items-center justify-center text-2xl mb-3">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h4 class="font-bold text-base mb-1">保険専門家</h4>
+                        <p class="text-xs text-brand-muted">賠償責任・リスク管理</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl text-center shadow-card border border-brand-beigeDark hover:border-brand-gold/40 transition-all">
+                        <div class="w-14 h-14 rounded-full bg-brand-goldBg text-brand-gold mx-auto flex items-center justify-center text-2xl mb-3">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h4 class="font-bold text-base mb-1">保健師</h4>
+                        <p class="text-xs text-brand-muted">食の安全・衛生管理</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Subjects Chips -->
+            <div class="bg-white p-8 rounded-3xl shadow-card border border-brand-beigeDark text-center fade-in-up">
+                <h3 class="font-serif-jp font-bold text-lg mb-6 text-brand-text">体系的に徹底的に学ぶ7つの核</h3>
+                <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+                    <span class="px-5 py-2.5 rounded-full bg-brand-greenBg text-brand-green font-medium text-sm sm:text-base border border-brand-green/10">衛生管理</span>
+                    <span class="px-5 py-2.5 rounded-full bg-brand-greenBg text-brand-green font-medium text-sm sm:text-base border border-brand-green/10">法務知識</span>
+                    <span class="px-5 py-2.5 rounded-full bg-brand-greenBg text-brand-green font-medium text-sm sm:text-base border border-brand-green/10">賠償保険</span>
+                    <span class="px-5 py-2.5 rounded-full bg-brand-greenBg text-brand-green font-medium text-sm sm:text-base border border-brand-green/10">個人経理</span>
+                    <span class="px-5 py-2.5 rounded-full bg-brand-greenBg text-brand-green font-medium text-sm sm:text-base border border-brand-green/10">サービス設計</span>
+                    <span class="px-5 py-2.5 rounded-full bg-brand-greenBg text-brand-green font-medium text-sm sm:text-base border border-brand-green/10">接客マナー</span>
+                    <span class="px-5 py-2.5 rounded-full bg-brand-greenBg text-brand-green font-medium text-sm sm:text-base border border-brand-green/10">リスク管理</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 講師紹介 (Instructors) -->
+    <section class="py-16 md:py-24 bg-white relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-brand-gold font-en text-2xl font-semibold block mb-1">Instructors</span>
+                <h2 class="text-2xl sm:text-4xl font-serif-jp font-bold text-brand-text mb-4">
+                    現場経験豊富な講師陣
+                </h2>
+                <p class="text-base sm:text-lg text-brand-muted leading-relaxed">
+                    調理技術だけでなく、お客様との信頼関係づくりや<br class="hidden sm:inline">現場判断力を実際の経験から伝授します。
+                </p>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Instructor 1 -->
+                <div class="bg-brand-beige rounded-3xl p-6 sm:p-10 shadow-card border border-brand-beigeDark grid grid-cols-1 md:grid-cols-12 gap-8 items-start fade-in-up">
+                    <div class="md:col-span-5 text-center">
+                        <div class="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-full overflow-hidden shadow-md mb-4 border-4 border-white">
+                            <img src="あさこさん.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80';" alt="與那嶺 朝子" class="w-full h-full object-cover">
+                        </div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold mb-2">現役料理代行人｜活動8年目</span>
+                        <h3 class="text-2xl font-serif-jp font-bold text-brand-text">與那嶺 朝子</h3>
+                        <p class="text-xs text-brand-muted mb-3">（よなみね あさこ）</p>
+                        <div class="bg-white py-2 px-4 rounded-xl shadow-sm inline-block">
+                            <p class="text-xs font-bold text-brand-gold">実績：累計サポート家庭 約4,000件</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-7 space-y-4">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-brand-gold">
+                            <h4 class="font-bold text-sm text-brand-gold mb-2">【メッセージ】</h4>
+                            <p class="text-sm sm:text-base leading-relaxed text-brand-text">
+                                「料理代行は一人で現場に行き、サービスを完結させる仕事です。不安を感じることもあるかもしれません。<br>
+                                講座では現場で必要な基本知識を伝え、お客様にとって『唯一無二のサービス』を提供できる料理代行人を目指せるようサポートします。」
+                            </p>
+                        </div>
+                        <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                            同じ家庭でも、家族構成や体調、お子様の成長により必要とされるサービスは変化します。その日、その時のお客様にとって最も心地よいサービスを提供することを大切にしています。<br>
+                            調理技術だけでなく、コミュニケーション・衛生管理・安全への配慮・現場判断力・気配りを通じて信頼関係を築く知恵をお伝えします。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Instructor 2 -->
+                <div class="bg-brand-beige rounded-3xl p-6 sm:p-10 shadow-card border border-brand-beigeDark grid grid-cols-1 md:grid-cols-12 gap-8 items-start fade-in-up">
+                    <div class="md:col-span-5 text-center">
+                        <div class="w-44 h-44 sm:w-52 sm:h-52 mx-auto rounded-full overflow-hidden shadow-md mb-4 border-4 border-white">
+                            <img src="東京・助川めぐみ.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80';" alt="助川 めぐみ" class="w-full h-full object-cover">
+                        </div>
+                        <span class="inline-block px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold mb-2">出張料理人｜活動歴 約9年</span>
+                        <h3 class="text-2xl font-serif-jp font-bold text-brand-text">助川 めぐみ</h3>
+                        <p class="text-xs text-brand-muted mb-3">（すけがわ めぐみ）</p>
+                        <div class="bg-white py-2 px-4 rounded-xl shadow-sm inline-block">
+                            <p class="text-xs font-bold text-brand-gold">実績：累計料理代行実績 2,000件以上</p>
+                        </div>
+                    </div>
+                    <div class="md:col-span-7 space-y-4">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-brand-gold">
+                            <h4 class="font-bold text-sm text-brand-gold mb-2">【メッセージ】</h4>
+                            <p class="text-sm sm:text-base leading-relaxed text-brand-text">
+                                「現場経験をもとに、実際の仕事で役立つ知識や考え方を伝えます。自信を持ってスタートし、長く愛される料理代行人として活躍できるよう心を込めてサポートします。」
+                            </p>
+                        </div>
+                        <p class="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                            料理代行の価値は、ただ料理を作ることだけではありません。料理を通じて、ご家族の毎日が少しでも豊かになることを大切にしています。<br>
+                            長く信頼される料理代行人には、料理技術・コミュニケーション力・信頼関係づくり・現場判断力などの総合力が不可欠です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- この講座で学べること (Curriculum) -->
+    <section class="py-16 md:py-24 bg-brand-beige">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-brand-gold font-en text-2xl font-semibold block mb-1">Curriculum</span>
+                <h2 class="text-2xl sm:text-4xl font-serif-jp font-bold text-brand-text mb-4">
+                    この講座で学べること
+                </h2>
+                <p class="text-base text-brand-muted">
+                    ゼロから安心してプロとして独立・稼働するための5つのステップ講座
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-in-up">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-brand-beigeDark flex flex-col justify-between hover:shadow-soft transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-2xl bg-amber-100 text-brand-gold font-serif-jp font-bold flex items-center justify-center text-lg">01</span>
+                            <i class="fa-solid fa-book-bookmark text-2xl text-brand-gold/40"></i>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif-jp mb-3">準備マニュアル</h3>
+                        <ul class="space-y-2 text-sm text-brand-muted">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 衛生知識・食中毒対策</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> サービス設計・メニュー提案</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 価格設定の黄金ルート</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 事前ヒアリングシート活用</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 接客マナー・印象作り</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 個人情報管理の徹底</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-brand-beigeDark flex flex-col justify-between hover:shadow-soft transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-2xl bg-amber-100 text-brand-gold font-serif-jp font-bold flex items-center justify-center text-lg">02</span>
+                            <span class="text-xs bg-brand-greenBg text-brand-green font-bold px-2.5 py-1 rounded-md">行政書士監修</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif-jp mb-3">法務講座</h3>
+                        <ul class="space-y-2 text-sm text-brand-muted">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 業務委託契約書の作り方</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 利用規約の作成ポイント</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 景表法・適切な広告表現</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 個人情報保護法の遵守</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 法的トラブル事前予防策</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-brand-beigeDark flex flex-col justify-between hover:shadow-soft transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-2xl bg-amber-100 text-brand-gold font-serif-jp font-bold flex items-center justify-center text-lg">03</span>
+                            <span class="text-xs bg-brand-greenBg text-brand-green font-bold px-2.5 py-1 rounded-md">保険専門家監修</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif-jp mb-3">保険講座</h3>
+                        <ul class="space-y-2 text-sm text-brand-muted">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 賠償責任保険の選び方</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 皿割れ・器物破損への対応</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> アレルギー事故リスク管理</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 万が一の初期対応手順</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-brand-beigeDark flex flex-col justify-between hover:shadow-soft transition-all">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-2xl bg-amber-100 text-brand-gold font-serif-jp font-bold flex items-center justify-center text-lg">04</span>
+                            <span class="text-xs bg-brand-greenBg text-brand-green font-bold px-2.5 py-1 rounded-md">税理士監修</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif-jp mb-3">経理講座</h3>
+                        <ul class="space-y-2 text-sm text-brand-muted">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 個人事業主の開業知識</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 日々の経理・帳簿の付け方</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 経費の範囲と確定申告の準備</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-card border border-brand-beigeDark flex flex-col justify-between hover:shadow-soft transition-all md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-2xl bg-amber-100 text-brand-gold font-serif-jp font-bold flex items-center justify-center text-lg">05</span>
+                            <span class="text-xs bg-amber-100 text-amber-900 font-bold px-2.5 py-1 rounded-md">実践サポート</span>
+                        </div>
+                        <h3 class="text-xl font-bold font-serif-jp mb-3">公式LINE設定サポート</h3>
+                        <p class="text-sm text-brand-muted mb-4">
+                            お客様からの予約受付導線をスムーズにする公式LINEの導入・初期設定をマンツーマンでサポートします。
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-brand-muted">
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 予約受付導線の構築</span>
+                            <span class="flex items-center gap-2"><i class="fa-solid fa-check text-brand-gold text-xs"></i> 自動応答・リッチメニュー設定</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 受講特典 (Benefits) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-brand-gold font-en text-2xl font-semibold block mb-1">Special Benefits</span>
+                <h2 class="text-2xl sm:text-4xl font-serif-jp font-bold text-brand-text mb-4">
+                    充実の受講特典
+                </h2>
+                <p class="text-base text-brand-muted">スタート時の悩みを解消する2大特典をご用意</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Benefit 1 -->
+                <div class="bg-gradient-to-br from-brand-goldBg to-white rounded-3xl p-8 sm:p-12 border-2 border-brand-gold/30 shadow-card fade-in-up">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-brand-gold text-white font-bold text-sm mb-4">
+                        特典①
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-serif-jp font-bold text-brand-text mb-2">オンライン個別相談</h3>
+                    <p class="text-sm font-bold text-brand-gold mb-6">【半年間有効】 1時間 × 3回分</p>
+                    <p class="text-sm sm:text-base text-brand-muted mb-6 leading-relaxed">
+                        講座を受けて終わりではなく、実際のサービス設計、価格設定、集客、お客様対応の悩みなどを1対1でじっくりご相談いただけます。
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs sm:text-sm font-medium">
+                        <span class="px-3 py-1.5 rounded-lg bg-white shadow-sm border border-brand-beigeDark">サービス設計</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white shadow-sm border border-brand-beigeDark">価格設定</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white shadow-sm border border-brand-beigeDark">集客相談</span>
+                        <span class="px-3 py-1.5 rounded-lg bg-white shadow-sm border border-brand-beigeDark">お客様対応</span>
+                    </div>
+                </div>
+
+                <!-- Benefit 2 -->
+                <div class="bg-gradient-to-br from-brand-greenBg to-white rounded-3xl p-8 sm:p-12 border-2 border-brand-green/30 shadow-card fade-in-up">
+                    <div class="inline-block px-4 py-1.5 rounded-full bg-brand-green text-white font-bold text-sm mb-4">
+                        特典②
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-serif-jp font-bold text-brand-text mb-2">
+                        全国料理代行コミュニティ<br class="sm:hidden">「クレッシャ」6か月無料参加
+                    </h3>
+                    <p class="text-base text-brand-green font-bold mb-6">料理代行を始めた後も、一人で悩まない最高の環境を提供</p>
+
+                    <p class="text-sm sm:text-base text-brand-muted mb-8 leading-relaxed">
+                        料理代行は技術を身につければ終わりではありません。実際に活動を始めると、初回のお客様対応、献立や調理内容の相談、リピートに繋がる接客、予想外の現場対応など新しい悩みが次々と生まれます。だからこそ、クレッシャでは活動を長く続けるためのコミュニティ環境を提供します。
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-green/10">
+                            <h4 class="font-bold text-brand-green mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-users text-sm"></i> 全国の仲間とのつながり
+                            </h4>
+                            <p class="text-xs text-brand-muted leading-relaxed">同じ目標に向かう仲間と情報交換でき、モチベーションを維持できます。</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-green/10">
+                            <h4 class="font-bold text-brand-green mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-lightbulb text-sm"></i> リアルな現場知識
+                            </h4>
+                            <p class="text-xs text-brand-muted leading-relaxed">実際に起きた事例やトラブル対処法など、現場ならではの生きた学びが得られます。</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-green/10">
+                            <h4 class="font-bold text-brand-green mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-comments text-sm"></i> いつでも相談できる安心感
+                            </h4>
+                            <p class="text-xs text-brand-muted leading-relaxed">一人で判断に迷う場面でも、経験者や仲間に気軽に相談できます。</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-brand-green/10">
+                            <h4 class="font-bold text-brand-green mb-2 flex items-center gap-2">
+                                <i class="fa-solid fa-chart-line text-sm"></i> 継続的なスキルアップ
+                            </h4>
+                            <p class="text-xs text-brand-muted leading-relaxed">開業後も最新の情報やノウハウを更新し、成長し続けられます。</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl border-l-4 border-brand-green shadow-sm">
+                        <p class="text-sm font-bold text-brand-text leading-relaxed">
+                            料理代行は、一人で頑張り続ける仕事ではありません。<br>
+                            「知識」「経験」「相談できる環境」「仲間とのつながり」のすべてが揃う場所で、安心して一歩を踏み出しましょう。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 受講の流れ (Flow) -->
+    <section class="py-16 md:py-24 bg-brand-beige">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-brand-gold font-en text-2xl font-semibold block mb-1">Flow</span>
+                <h2 class="text-2xl sm:text-4xl font-serif-jp font-bold text-brand-text mb-4">受講の流れ</h2>
+                <p class="text-base text-brand-muted">申し込みから料理代行スタートまでの5ステップ</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 relative fade-in-up">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-2xl text-center shadow-card border border-brand-beigeDark relative">
+                    <span class="text-xs font-bold text-brand-gold bg-amber-100 px-3 py-1 rounded-full inline-block mb-3">STEP 01</span>
+                    <h3 class="font-bold text-base mb-2">無料相談・お申し込み</h3>
+                    <p class="text-xs text-brand-muted">説明会に参加後、受講をご案内</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-2xl text-center shadow-card border border-brand-beigeDark relative">
+                    <span class="text-xs font-bold text-brand-gold bg-amber-100 px-3 py-1 rounded-full inline-block mb-3">STEP 02</span>
+                    <h3 class="font-bold text-base mb-2">eラーニング開始</h3>
+                    <p class="text-xs text-brand-muted">専用マイページへアクセス</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-2xl text-center shadow-card border border-brand-beigeDark relative">
+                    <span class="text-xs font-bold text-brand-gold bg-amber-100 px-3 py-1 rounded-full inline-block mb-3">STEP 03</span>
+                    <h3 class="font-bold text-base mb-2">自分のペースで学習</h3>
+                    <p class="text-xs text-brand-muted">好きな時間に何度でも復習可能</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-white p-6 rounded-2xl text-center shadow-card border border-brand-beigeDark relative">
+                    <span class="text-xs font-bold text-brand-gold bg-amber-100 px-3 py-1 rounded-full inline-block mb-3">STEP 04</span>
+                    <h3 class="font-bold text-base mb-2">オンライン個別相談</h3>
+                    <p class="text-xs text-brand-muted">講師と1対1で不明点を解消</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="bg-brand-gold text-white p-6 rounded-2xl text-center shadow-card relative">
+                    <span class="text-xs font-bold text-white bg-white/20 px-3 py-1 rounded-full inline-block mb-3">STEP 05</span>
+                    <h3 class="font-bold text-base mb-2">料理代行スタート！</h3>
+                    <p class="text-xs text-white/90">自信を持って最初の訪問へ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金 (Price) -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-b from-brand-beige to-white rounded-3xl p-8 sm:p-12 border-2 border-brand-gold/40 shadow-soft text-center fade-in-up">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-brand-gold text-white font-bold text-xs sm:text-sm mb-4">
+                    クレッシャ認定｜専門家監修
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-serif-jp font-bold text-brand-text mb-2">
+                    料理代行スタートパック
+                </h2>
+                <div class="my-6">
+                    <span class="text-sm font-bold text-brand-muted">受講受講料 (一括/税込)</span>
+                    <div class="text-4xl sm:text-6xl font-serif-jp font-bold text-brand-text mt-1">
+                        135,000<span class="text-xl sm:text-2xl font-normal">円</span>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-brand-beigeDark text-left max-w-md mx-auto mb-8">
+                    <h4 class="font-bold text-sm text-brand-text border-b border-brand-beigeDark pb-2 mb-3">含まれるコンテンツ</h4>
+                    <ul class="space-y-2.5 text-sm text-brand-muted">
+                        <li class="flex items-center justify-between"><span>・eラーニング教材一式</span> <i class="fa-solid fa-check text-brand-gold"></i></li>
+                        <li class="flex items-center justify-between"><span>・現場で使える準備マニュアル</span> <i class="fa-solid fa-check text-brand-gold"></i></li>
+                        <li class="flex items-center justify-between"><span>・行政書士監修 法務講座</span> <i class="fa-solid fa-check text-brand-gold"></i></li>
+                        <li class="flex items-center justify-between"><span>・保険専門家監修 保険講座</span> <i class="fa-solid fa-check text-brand-gold"></i></li>
+                        <li class="flex items-center justify-between"><span>・税理士監修 経理講座</span> <i class="fa-solid fa-check text-brand-gold"></i></li>
+                        <li class="flex items-center justify-between"><span>・公式LINE設定サポート</span> <i class="fa-solid fa-check text-brand-gold"></i></li>
+                        <li class="flex items-center justify-between"><span>・個別相談 3回（半年間有効）</span> <i class="fa-solid fa-check text-brand-gold"></i></li>
+                        <li class="flex items-center justify-between font-bold text-brand-green"><span>・クレッシャコミュニティ 6か月無料</span> <i class="fa-solid fa-check text-brand-green"></i></li>
+                    </ul>
+                </div>
+
+                <a href="https://forms.gle/k1NfrK2Xj6eswHF6A" target="_blank" rel="noopener" class="btn-shine inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-brand-gold text-white font-bold text-lg hover:bg-amber-600 transition-all shadow-glow w-full sm:w-auto">
+                    受講する
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-16 md:py-24 bg-brand-beige">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-up">
+                <span class="text-brand-gold font-en text-2xl font-semibold block mb-1">FAQ</span>
+                <h2 class="text-2xl sm:text-4xl font-serif-jp font-bold text-brand-text mb-4">よくあるご質問</h2>
+            </div>
+
+            <div class="space-y-4 fade-in-up">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-2xl border border-brand-beigeDark overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-brand-text hover:text-brand-gold transition-colors">
+                        <span class="flex items-center gap-3"><span class="text-brand-gold font-en text-xl">Q.</span> 未経験でも受講できますか？</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-sm text-brand-muted leading-relaxed">
+                        はい、もちろんです。本講座は普段の家庭料理レベルの技術があれば、プロとして安心してお仕事を開始できるよう基礎から丁寧に解説しています。
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-2xl border border-brand-beigeDark overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-brand-text hover:text-brand-gold transition-colors">
+                        <span class="flex items-center gap-3"><span class="text-brand-gold font-en text-xl">Q.</span> 副業でも始められますか？</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-sm text-brand-muted leading-relaxed">
+                        はい、副業としてスタートされる方も多くいらっしゃいます。週1日や短時間から受託する際の料金設計も学べます。
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-2xl border border-brand-beigeDark overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-brand-text hover:text-brand-gold transition-colors">
+                        <span class="flex items-center gap-3"><span class="text-brand-gold font-en text-xl">Q.</span> 動画は何度でも視聴できますか？</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-sm text-brand-muted leading-relaxed">
+                        はい、スマートフォンやパソコンから24時間いつでも何度でも復習視聴が可能です。
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-2xl border border-brand-beigeDark overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-brand-text hover:text-brand-gold transition-colors">
+                        <span class="flex items-center gap-3"><span class="text-brand-gold font-en text-xl">Q.</span> 個別相談はいつ利用できますか？</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-sm text-brand-muted leading-relaxed">
+                        イーラーニング受講終了後から半年間有効です。講師SCHEDULEを確認しご相談ください。
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-white rounded-2xl border border-brand-beigeDark overflow-hidden shadow-sm">
+                    <button class="faq-toggle w-full p-6 text-left flex justify-between items-center gap-4 font-bold text-brand-text hover:text-brand-gold transition-colors">
+                        <span class="flex items-center gap-3"><span class="text-brand-gold font-en text-xl">Q.</span> 標準的な受講期間はどのくらいですか？</span>
+                        <i class="fa-solid fa-chevron-down text-brand-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer px-6 pb-6 text-sm text-brand-muted leading-relaxed">
+                        オンライン動画の学習自体は1カ月～2カ月程度で一通り完了できます。個別相談を活用しながら自身のペースでスタートを始めることが可能です。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最終CTA (Final CTA) -->
+    <section class="py-20 md:py-28 bg-gradient-to-br from-brand-green via-brand-greenLight to-brand-green text-white relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl sm:text-5xl font-serif-jp font-bold mb-6 leading-tight fade-in-up">
+                あなたの「料理が好き」を、<br>
+                信頼される仕事へ。
+            </h2>
+            <p class="text-base sm:text-lg leading-relaxed text-emerald-100 max-w-2xl mx-auto mb-10 fade-in-up">
+                料理代行を始めることがゴールではありません。<br>
+                安心して続けられること。お客様から信頼されること。<br>
+                困った時に相談できる仲間がいること。<br>
+                そのために必要な知識と環境を、このスタートパックで提供します。
+            </p>
+
+            <div class="bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 max-w-xl mx-auto fade-in-up">
+                <a href="https://forms.gle/k1NfrK2Xj6eswHF6A" target="_blank" rel="noopener" class="btn-shine w-full group inline-flex items-center justify-center gap-3 px-8 py-5 rounded-2xl bg-gradient-to-r from-brand-gold via-amber-500 to-amber-600 text-white font-bold text-xl shadow-glow hover:scale-105 transition-all">
+                    <span>受講する</span>
+                    <i class="fa-solid fa-arrow-right text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-text text-white/70 py-12 border-t border-white/10 text-xs text-center">
+        <div class="max-w-6xl mx-auto px-4 space-y-4">
+            <p class="text-white font-serif-jp text-base">クレッシャ認定 料理代行スタートパック</p>
+            <div class="flex justify-center items-center gap-4 text-xs flex-wrap">
+                <a href="https://crescia-linq.github.io/crescia/privacy.html" target="_blank" rel="noopener" class="hover:text-white transition-colors underline underline-offset-4">プライバシーポリシー</a>
+                <span class="opacity-40">|</span>
+                <a href="https://crescia-linq.github.io/crescia/tokushoho.html" target="_blank" rel="noopener" class="hover:text-white transition-colors underline underline-offset-4">特定商取引法に基づく表記</a>
+            </div>
+            <p>&copy; Crescia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Floating CTA Bar -->
+    <div id="floating-cta" class="fixed bottom-0 left-0 w-full z-30 p-3 bg-white/95 backdrop-blur-md border-t border-brand-beigeDark shadow-lg transition-all duration-300 translate-y-full">
+        <div class="max-w-md mx-auto flex items-center justify-between gap-3">
+            <div class="text-left">
+                <span class="text-xs text-brand-gold font-bold block">専門家監修スタートパック</span>
+                <span class="text-xs sm:text-sm font-bold text-brand-text">受講お申し込み受付中</span>
+            </div>
+            <a href="https://forms.gle/k1NfrK2Xj6eswHF6A" target="_blank" rel="noopener" class="flex-1 btn-shine text-center py-3 px-4 rounded-xl bg-brand-gold text-white font-bold text-sm shadow-md">
+                受講する
+            </a>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // FAQ Accordion
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            faqToggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const answer = toggle.nextElementSibling;
+                    const icon = toggle.querySelector('.fa-chevron-down');
+                    const isOpen = answer.classList.contains('open');
+
+                    // Close all
+                    document.querySelectorAll('.faq-answer').forEach(el => {
+                        el.style.maxHeight = null;
+                        el.classList.remove('open');
+                    });
+                    document.querySelectorAll('.fa-chevron-down').forEach(i => {
+                        i.style.transform = 'rotate(0deg)';
+                    });
+
+                    // Open clicked if was closed
+                    if (!isOpen) {
+                        answer.classList.add('open');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        if (icon) icon.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+
+            // Intersection Observer for scroll animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up, .fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Floating CTA Visibility handling
+            const floatingCta = document.getElementById('floating-cta');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 400) {
+                    floatingCta.classList.remove('translate-y-full');
+                } else {
+                    floatingCta.classList.add('translate-y-full');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
