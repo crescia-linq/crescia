@@ -128,6 +128,17 @@ h3::after { content: ""; flex: 1; border-top: 1px solid var(--line); }
 }
 .flow li > span { padding-top: 3px; }
 .message { color: var(--muted); font-size: 14px; }
+.included {
+  display: flex; flex-direction: column; gap: 4px;
+  border: 2px solid var(--amber); border-radius: 14px; padding: 14px 16px;
+  color: var(--fg); text-decoration: none;
+}
+.included:hover { background: var(--amber-soft); }
+.included:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+.included-label { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: var(--amber-deep); }
+.included-body { font-size: 13.5px; color: var(--muted); }
+.included-body b { display: block; font-size: 15.5px; color: var(--fg); line-height: 1.6; margin-bottom: 2px; }
+.note a { color: var(--amber-deep); }
 .note { font-size: 13px; color: var(--muted); }
 .by { font-size: 13px; color: var(--muted); }
 .by b { color: var(--fg); }
@@ -181,6 +192,10 @@ footer { font-size: 12px; color: var(--muted); text-align: center; letter-spacin
         <p>「自信を持ってお客様のお宅に訪問したい」</p>
       </div>
       <p>そんな方の最初の一歩を支える、実践型の開業支援プログラムです。専門家によるeラーニングと、現役料理代行講師による実践講義を組み合わせ、知識だけでなく「実際に仕事として始める力」を身につけます。</p>
+      <a class="included" href="#course">
+        <span class="included-label">セット内容</span>
+        <span class="included-body"><b>「独立開業オンラインコース」のすべての内容が含まれています</b>法務・保険・公式LINE活用・経理の講座を、スタートパックの中で受講できます ›</span>
+      </a>
       <h3>特徴</h3>
       <ul class="checks">
         <li><span>専門家監修のカリキュラムで、開業に必要な知識を学べる</span></li>
@@ -251,6 +266,7 @@ footer { font-size: 12px; color: var(--muted); text-align: center; letter-spacin
         <li><span>公式LINE設定のオンラインフォローは、お問い合わせ時に日程を調整します</span></li>
       </ol>
       <p class="note">※定員に達した場合は、先着順でのご案内となります。</p>
+      <p class="note">※このコースの内容は、すべて<a href="#startpack">料理代行スタートパック</a>にも含まれています。</p>
       <a class="cta" href="https://manager.the-online-class.com/enterprise/oYTNykTMgoTZ/landing_page/ogN5QDI6AHb/show" target="_blank" rel="noopener">詳細・お申し込み ›</a>
     </div>
   </article>
